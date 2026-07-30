@@ -1,0 +1,63 @@
+# 依赖与缓存目录（构建时重新安装，避免污染镜像）
+node_modules/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vite/
+.cache/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 环境变量（绝不打入镜像）
+.env
+.env.local
+.env.*.local
+backend/.env
+
+# 前端构建产物（Dockerfile 内会重新 npm run build，避免旧产物干扰）
+dist/
+build/
+frontend/dist/
+
+# 版本控制与 IDE 配置
+.git/
+.gitignore
+.gitattributes
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Trae / specs / 计划文档（不属于运行时）
+.trae/
+
+# 日志与本地数据
+*.log
+logs/
+*.db
+*.sqlite3
+*.sqlite
+dump.rdb
+
+# 运行时数据（镜像内由 main.py 自动创建空目录，不要把本地数据打进去）
+backend/uploads/
+backend/storage/reports/
+
+# 文档（不打入镜像）
+docs/
+*.md
+!frontend/README.md
+!backend/README.md
+
+# Docker 自身
+Dockerfile
+.dockerignore
+.docker/

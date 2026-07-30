@@ -1,0 +1,259 @@
+name: Deploy to ModelScope Studio
+
+# 触发条件：推送到 main/master 分支，或手动触发
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+# 魔搭 OpenAPI 基础地址（国内站）
+env:
+  MS_ENDPOINT: https://modelscope.cn
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # ----------------------------------------------------------------------
+      # 1. 拉取代码（fetch-depth: 0 保留完整历史，便于与魔搭 master 分支合并）
+      # ----------------------------------------------------------------------
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ----------------------------------------------------------------------
+      # 2. 自动获取 ModelScope owner（从 /users/me 接口读用户名，避免硬编码）
+      # ----------------------------------------------------------------------
+      - name: Resolve ModelScope owner
+        id: owner
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+        run: |
+          if [ -z "$MODELSCOPE_API_KEY" ]; then
+            echo "::error::MODELSCOPE_API_KEY secret 未配置"
+            exit 1
+          fi
+          OWNER=$(curl -s "$MS_ENDPOINT/openapi/v1/users/me" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY" | jq -r '.data.name')
+          if [ -z "$OWNER" ] || [ "$OWNER" = "null" ]; then
+            echo "::error::无法获取 ModelScope 用户名，请检查 MODELSCOPE_API_KEY 是否有效"
+            exit 1
+          fi
+          echo "owner=$OWNER" >> $GITHUB_OUTPUT
+          echo "✅ ModelScope owner: $OWNER"
+
+      # ----------------------------------------------------------------------
+      # 3. 创建创空间（首次运行时自动创建，后续跳过）
+      #    创空间名优先用 Variables.MS_REPO_NAME，默认 home-chem-safety-agent
+      # ----------------------------------------------------------------------
+      - name: Create Studio if not exists
+        id: create
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY")
+
+          if [ "$STATUS" = "404" ]; then
+            echo "🔧 创空间不存在，创建 $MS_OWNER/$MS_REPO ..."
+            HTTP_CODE=$(curl -s -o /tmp/create.json -w "%{http_code}" -X POST \
+              "$MS_ENDPOINT/openapi/v1/studios" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "owner": "'"$MS_OWNER"'",
+                "repo_name": "'"$MS_REPO"'",
+                "sdk_type": "docker",
+                "visibility": "public",
+                "hardware": "platform/2v-cpu-16g-mem",
+                "display_name": "安居智评 Agent"
+              }')
+            cat /tmp/create.json
+            if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
+              echo "::error::创建创空间失败 (HTTP $HTTP_CODE)"
+              exit 1
+            fi
+            echo "✅ 创空间创建成功，等待初始化..."
+            sleep 20
+          elif [ "$STATUS" = "200" ]; then
+            echo "ℹ️ 创空间已存在"
+          else
+            echo "::error::查询创空间失败 (HTTP $STATUS)"
+            exit 1
+          fi
+          echo "repo=$MS_REPO" >> $GITHUB_OUTPUT
+
+      # ----------------------------------------------------------------------
+      # 4. 推送代码到魔搭创空间 Git 仓库（master 分支）
+      #    魔搭默认分支是 master，GitHub 是 main，用 HEAD:master 映射
+      # ----------------------------------------------------------------------
+      - name: Push code to ModelScope
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          MS_HOST="${MS_ENDPOINT#https://}"
+          git remote add modelscope "https://oauth2:${MODELSCOPE_API_KEY}@${MS_HOST}/studios/${MS_OWNER}/${MS_REPO}.git"
+
+          # 拉取远程 master 分支（首次为空时跳过）
+          git fetch modelscope master || echo "远程为空，跳过 fetch"
+
+          # 远程有内容时合并，冲突保留本地版本
+          if git rev-parse --verify modelscope/master >/dev/null 2>&1; then
+            echo "🔀 合并远程 master..."
+            git merge modelscope/master --allow-unrelated-histories -m "Merge remote master" || {
+              echo "⚠️ 合并冲突，保留本地版本"
+              git checkout --ours .
+              git add .
+              git commit -m "Resolve conflicts, keep local version"
+            }
+          fi
+
+          echo "📦 推送到魔搭 master 分支..."
+          git push modelscope HEAD:master
+          echo "✅ 代码推送完成"
+
+      # ----------------------------------------------------------------------
+      # 5. 配置 DASHSCOPE_API_KEY 为 Secret（敏感信息，不会回显）
+      # ----------------------------------------------------------------------
+      - name: Configure DASHSCOPE_API_KEY secret
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+        run: |
+          if [ -z "$DASHSCOPE_API_KEY" ]; then
+            echo "::error::DASHSCOPE_API_KEY secret 未配置"
+            exit 1
+          fi
+          # 先尝试 POST 新增，已存在则 PUT 更新
+          HTTP_CODE=$(curl -s -o /tmp/secret.json -w "%{http_code}" -X POST \
+            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/secrets" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"key": "DASHSCOPE_API_KEY", "value": "'"$DASHSCOPE_API_KEY"'"}')
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
+            echo "Secret 已存在，改用 PUT 更新..."
+            curl -s -X PUT \
+              "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/secrets" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{"key": "DASHSCOPE_API_KEY", "value": "'"$DASHSCOPE_API_KEY"'"}'
+          fi
+          echo "✅ DASHSCOPE_API_KEY secret 配置完成"
+
+      # ----------------------------------------------------------------------
+      # 6. 配置 PORT=7860 为明文变量（非敏感配置）
+      # ----------------------------------------------------------------------
+      - name: Configure PORT variable
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+        run: |
+          HTTP_CODE=$(curl -s -o /tmp/var.json -w "%{http_code}" -X POST \
+            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/variables" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{"key": "PORT", "value": "7860"}')
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
+            echo "Variable 已存在，改用 PUT 更新..."
+            curl -s -X PUT \
+              "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/variables" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{"key": "PORT", "value": "7860"}'
+          fi
+          echo "✅ PORT=7860 变量配置完成"
+
+      # ----------------------------------------------------------------------
+      # 7. 触发部署
+      # ----------------------------------------------------------------------
+      - name: Deploy Studio
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+        run: |
+          echo "🚀 触发部署..."
+          curl -s -X POST \
+            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/deploy" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY"
+          echo "✅ 部署已触发"
+
+      # ----------------------------------------------------------------------
+      # 8. 监控构建和运行日志（最多 15 分钟）
+      # ----------------------------------------------------------------------
+      - name: Monitor deployment
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+        run: |
+          echo "⏳ 等待 30 秒让构建启动..."
+          sleep 30
+
+          for i in $(seq 1 30); do
+            echo ""
+            echo "=== 第 $i/30 次检查 ==="
+
+            # 查询状态
+            STATUS=$(curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              | jq -r '.data.status // empty')
+            echo "状态: $STATUS"
+
+            if [ "$STATUS" = "Running" ]; then
+              echo ""
+              echo "✅✅✅ 部署成功！✅✅✅"
+              exit 0
+            fi
+
+            if [ "$STATUS" = "Error" ] || [ "$STATUS" = "Failed" ]; then
+              echo "❌ 部署失败，构建日志："
+              curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/build" \
+                -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -80
+              echo ""
+              echo "运行日志："
+              curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/run" \
+                -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -30
+              exit 1
+            fi
+
+            # 打印最近的构建日志（最后 5 行）
+            echo "--- 构建日志（最后 5 行）---"
+            curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/build" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -5
+
+            sleep 30
+          done
+
+          echo "⚠️ 超时（15 分钟内未完成）"
+          exit 1
+
+      # ----------------------------------------------------------------------
+      # 9. 输出最终 URL
+      # ----------------------------------------------------------------------
+      - name: Output Studio URL
+        if: always()
+        env:
+          MS_OWNER: ${{ steps.owner.outputs.owner }}
+          MS_REPO: ${{ steps.create.outputs.repo }}
+        run: |
+          echo "=========================================="
+          echo "🏠 安居智评 Agent 部署信息"
+          echo "=========================================="
+          echo "魔搭创空间 URL: $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO"
+          echo "健康检查:       $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO/health"
+          echo "API 文档:       $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO/docs"
+          echo "=========================================="

@@ -1,0 +1,49 @@
+# Render 平台部署配置（备选方案）
+# 文档：https://render.com/docs/blueprint-spec
+# 说明：本项目前后端已合并到同一 FastAPI 服务（Docker 镜像），
+#       因此只需一个 web service 即可，无需单独 static site。
+
+services:
+  - type: web
+    name: anju-zhiping
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: DASHSCOPE_API_KEY
+        sync: false
+        description: 阿里云百炼 DashScope API Key（必填，在 Render 控制台填入真实值）
+      - key: REDIS_URL
+        sync: false
+        description: Redis 连接地址（可选）
+      - key: QWEN3_MODEL
+        value: qwen-plus
+        description: Qwen3 文本模型名
+      - key: QWEN_VL_MODEL
+        value: qwen-vl-plus
+        description: Qwen-VL 多模态模型名
+      - key: CORS_ORIGINS
+        value: ""
+        description: CORS 允许的前端来源，逗号分隔。同源部署时可留空
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: TZ
+        value: Asia/Shanghai
+
+# 备选：如需独立部署前端为静态站点（CDN 加速），可取消下面注释。
+#  - type: web
+#    name: anju-zhiping-frontend
+#    runtime: static
+#    buildCommand: cd frontend && npm ci && npm run build
+#    staticPublishPath: ./frontend/dist
+#    envVars:
+#      - key: VITE_API_BASE
+#        value: https://anju-zhiping.onrender.com
+#    routes:
+#      - source: /api/*
+#        destination: https://anju-zhiping.onrender.com
+#      - source: /*
+#        destination: /index.html

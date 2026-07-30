@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.zeabur.app/template.json",
+  "build": {
+    "type": "dockerfile",
+    "dockerfile": "Dockerfile"
+  },
+  "deploy": {
+    "startCommand": "python -m uvicorn main:app --host 0.0.0.0 --port 8000",
+    "workingDirectory": "/app/backend",
+    "healthCheckPath": "/health",
+    "healthCheckTimeout": 30,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3
+  },
+  "envs": {
+    "DASHSCOPE_API_KEY": {
+      "description": "阿里云百炼 DashScope API Key，必填",
+      "required": true
+    },
+    "REDIS_URL": {
+      "description": "Redis 连接地址（可选，用于任务/缓存）",
+      "required": false
+    },
+    "QWEN3_MODEL": {
+      "description": "Qwen3 文本模型名，默认 qwen-plus",
+      "required": false,
+      "default": "qwen-plus"
+    },
+    "QWEN_VL_MODEL": {
+      "description": "Qwen-VL 多模态模型名，默认 qwen-vl-plus",
+      "required": false,
+      "default": "qwen-vl-plus"
+    },
+    "CORS_ORIGINS": {
+      "description": "CORS 允许的前端来源，逗号分隔。同源部署（前端由 FastAPI 服务）时可留空",
+      "required": false,
+      "default": ""
+    }
+  }
+}
