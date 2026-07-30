@@ -23,10 +23,10 @@ jobs:
           fetch-depth: 0
 
       # ----------------------------------------------------------------------
-      # 2. 推送代码到魔搭创空间 Git 仓库（master 分支）
-      #    魔搭默认分支是 master，GitHub 是 main，用 HEAD:master 映射
+      # 2. 创建创空间（首次运行时自动创建，后续跳过）
+      #    用 OpenAPI（API Key 认证），借鉴 MedEvidence-AI 实战经验
       # ----------------------------------------------------------------------
-      - name: Push code to ModelScope
+      - name: Create Studio if not exists
         env:
           MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
           MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
@@ -37,6 +37,48 @@ jobs:
             exit 1
           fi
 
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://modelscope.cn/openapi/v1/studios/${MS_OWNER}/${MS_REPO}" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY")
+
+          if [ "$STATUS" = "404" ]; then
+            echo "🔧 创空间不存在，创建 $MS_OWNER/$MS_REPO ..."
+            HTTP_CODE=$(curl -s -o /tmp/create.json -w "%{http_code}" -X POST \
+              "https://modelscope.cn/openapi/v1/studios" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d '{
+                "owner": "'"$MS_OWNER"'",
+                "repo_name": "'"$MS_REPO"'",
+                "sdk_type": "docker",
+                "visibility": "public",
+                "hardware": "platform/2v-cpu-16g-mem",
+                "display_name": "安居智评 Agent"
+              }')
+            cat /tmp/create.json
+            if [ "$HTTP_CODE" != "200" ]; then
+              echo "::error::创建创空间失败 (HTTP $HTTP_CODE)"
+              exit 1
+            fi
+            echo "✅ 创空间创建成功，等待初始化..."
+            sleep 20
+          elif [ "$STATUS" = "200" ]; then
+            echo "ℹ️ 创空间已存在"
+          else
+            echo "::error::查询创空间失败 (HTTP $STATUS)"
+            exit 1
+          fi
+
+      # ----------------------------------------------------------------------
+      # 3. 推送代码到魔搭创空间 Git 仓库（master 分支）
+      #    魔搭默认分支是 master，GitHub 是 main，用 HEAD:master 映射
+      # ----------------------------------------------------------------------
+      - name: Push code to ModelScope
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+          MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
@@ -62,7 +104,7 @@ jobs:
           echo "✅ 代码推送完成"
 
       # ----------------------------------------------------------------------
-      # 3. 用 cookie API 查询创空间状态 + 触发 restart 重新部署
+      # 4. 用 cookie API 查询创空间状态 + 触发 restart 重新部署
       #    借鉴 modelscope-studio-manager Skill 的私有 API 方案
       # ----------------------------------------------------------------------
       - name: Restart Studio to trigger redeploy
@@ -101,8 +143,8 @@ jobs:
           echo "✅ restart 已触发"
 
       # ----------------------------------------------------------------------
-      # 3.5 提示用户在创空间设置页配置环境变量
-      #      （魔搭 API 不支持远程设置密文变量，必须网页手动配置，借鉴 MedEvidence-AI 经验）
+      # 5. 提示用户在创空间设置页配置环境变量
+      #    （魔搭 API 不支持远程设置密文变量，必须网页手动配置，借鉴 MedEvidence-AI 经验）
       # ----------------------------------------------------------------------
       - name: Remind to configure env vars
         if: always()
@@ -125,7 +167,7 @@ jobs:
           echo "=========================================="
 
       # ----------------------------------------------------------------------
-      # 4. 监控部署状态（最多 15 分钟）
+      # 6. 监控部署状态（最多 15 分钟）
       # ----------------------------------------------------------------------
       - name: Monitor deployment
         env:
@@ -167,7 +209,7 @@ jobs:
           exit 1
 
       # ----------------------------------------------------------------------
-      # 5. 健康检查 + 输出最终 URL
+      # 7. 健康检查 + 输出最终 URL
       # ----------------------------------------------------------------------
       - name: Health check and output URL
         if: always()
