@@ -10,6 +10,9 @@ import subprocess
 import tempfile
 import sys
 
+# 强制无缓冲输出，确保进度实时可见
+sys.stdout.reconfigure(line_buffering=True)
+
 REPO = "yigenfeng0707-netizen/small-but-promising"
 BRANCH = "main"
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -54,23 +57,29 @@ def main():
     total = len(files)
     print(f"共 {total} 个文件待上传")
 
-    # 2. 先用 Contents API 创建一个初始文件，初始化仓库（解决空仓库 409 问题）
-    print("初始化仓库（创建 .gitkeep）...")
-    init_content = base64.b64encode(b"").decode("ascii")
-    gh_api(
-        f"repos/{REPO}/contents/.gitkeep",
-        method="PUT",
-        input_data={
-            "message": "init repo",
-            "content": init_content,
-            "branch": BRANCH,
-        },
-    )
-    print("✅ 仓库已初始化")
+    # 2. 初始化仓库（如果仓库为空，先创建 .gitkeep；否则跳过）
+    try:
+        ref = gh_api(f"repos/{REPO}/git/ref/heads/{BRANCH}")
+        parent_sha = ref["object"]["sha"]
+        print(f"✅ 仓库已初始化，当前 HEAD: {parent_sha[:7]}")
+    except RuntimeError:
+        # 仓库为空，用 Contents API 创建初始文件
+        print("初始化仓库（创建 .gitkeep）...")
+        init_content = base64.b64encode(b"").decode("ascii")
+        gh_api(
+            f"repos/{REPO}/contents/.gitkeep",
+            method="PUT",
+            input_data={
+                "message": "init repo",
+                "content": init_content,
+                "branch": BRANCH,
+            },
+        )
+        print("✅ 仓库已初始化")
+        ref = gh_api(f"repos/{REPO}/git/ref/heads/{BRANCH}")
+        parent_sha = ref["object"]["sha"]
 
-    # 3. 获取初始 commit 的 sha（作为新 commit 的 parent）
-    ref = gh_api(f"repos/{REPO}/git/ref/heads/{BRANCH}")
-    parent_sha = ref["object"]["sha"]
+    # 3. 获取初始 commit 的 tree sha（作为新 tree 的 base）
     parent_commit = gh_api(f"repos/{REPO}/git/commits/{parent_sha}")
     base_tree_sha = parent_commit["tree"]["sha"]
     print(f"✅ Parent commit: {parent_sha[:7]}, base tree: {base_tree_sha[:7]}")
