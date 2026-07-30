@@ -53,21 +53,22 @@ COPY --from=frontend-build /app/frontend/dist /app/static
 # 运行时目录（uploads / storage/reports 由 config.py 启动时自动创建，这里显式声明便于挂卷）
 RUN mkdir -p /app/backend/uploads /app/backend/storage/reports
 
-# 暴露端口：
-#   - 魔搭创空间强制 7860（ms_deploy.json 中 port 字段必须为 7860）
-#   - 其他平台（Zeabur/Railway/Render）可通过 PORT 环境变量覆盖
-# config.py 默认 PORT=8000，魔搭创空间部署时 ms_deploy.json 的环境变量会设 PORT=7860
+# 关键：魔搭创空间 SDK 默认探活 7860 端口，必须确保 uvicorn 监听 7860。
+# 借鉴 MedEvidence-AI 实战经验：uvicorn 只认 UVICORN_PORT，不认 PORT，
+# 所以必须同时设置 UVICORN_PORT、PORT、HOST 三个环境变量，并在 CMD 中硬编码端口。
+ENV UVICORN_PORT=7860
+ENV UVICORN_HOST=0.0.0.0
+ENV PORT=7860
+ENV HOST=0.0.0.0
+
 EXPOSE 7860
 
 # 工作目录切到 backend/，使 main.py 中的相对路径（uploads/、storage/reports/）落到正确位置
 WORKDIR /app/backend
 
-# 健康检查（Cloud Run / Zeabur / Railway / Render 都支持；魔搭创空间不强制但兼容）
-# 端口跟随 PORT 环境变量；默认 8000，魔搭部署时 PORT=7860
+# 健康检查（魔搭创空间 SDK 会探活 7860；其他平台也兼容）
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-    CMD curl -fsS http://127.0.0.1:${PORT:-8000}/health || exit 1
+    CMD curl -fsS http://127.0.0.1:7860/health || exit 1
 
-# 启动命令：uvicorn 监听 0.0.0.0:${PORT}
-# 不在 CMD 里写死端口，而是让 config.py 从 PORT 环境变量读取（main.py __main__ 分支已支持）
-# uvicorn 显式 --port 优先级最高，避免 pydantic-settings 读取失败时端口兜底
-CMD ["sh", "-c", "python -m uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# 启动命令：硬编码 7860 端口（借鉴 MedEvidence-AI，避免环境变量被覆盖导致端口不匹配）
+CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]

@@ -1,0 +1,86 @@
+name: ModelScope Studio Health Check
+
+# 借鉴 MedEvidence-AI 的 health-check.yml + modelscope-studio-manager Skill
+# 每天北京时间 09:00 自动巡检，服务异常时自动 restart
+
+on:
+  schedule:
+    # 每天北京时间 09:00 运行（UTC 01:00）
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run health monitor
+        run: |
+          python -c "
+          import os, json, urllib.request, urllib.error, sys
+
+          OWNER = '${{ vars.MS_OWNER || \"gsym236998\" }}'
+          NAME = '${{ vars.MS_REPO_NAME || \"home-chem-safety-agent\" }}'
+          SERVICE_URL = f'https://{OWNER}-{NAME}.mn1.modelscope.cn'
+          COOKIE = os.getenv('MODELSCOPE_COOKIE', '')
+
+          if not COOKIE:
+              print('::error::MODELSCOPE_COOKIE secret 未配置')
+              sys.exit(1)
+
+          def http_json(url, method='GET', data=None, timeout=15):
+              body = json.dumps(data).encode() if data else None
+              req = urllib.request.Request(url, data=body, method=method)
+              req.add_header('Cookie', COOKIE)
+              req.add_header('User-Agent', 'Mozilla/5.0')
+              req.add_header('Accept', 'application/json')
+              try:
+                  with urllib.request.urlopen(req, timeout=timeout) as r:
+                      return json.loads(r.read().decode())
+              except urllib.error.HTTPError as e:
+                  return {'error': e.code, 'body': e.read().decode('utf-8', errors='ignore')[:300]}
+
+          # 1. 查询状态
+          data = http_json(f'https://www.modelscope.cn/api/v1/studio/{OWNER}/{NAME}')
+          status = data.get('Data', {}).get('Status')
+          failed_msg = data.get('Data', {}).get('FailedMessage', '')
+          print(f'当前状态: {status}')
+          if failed_msg:
+              print(f'失败原因: {failed_msg}')
+
+          # 2. 健康检查
+          healthy = False
+          try:
+              req = urllib.request.Request(f'{SERVICE_URL}/health', headers={'User-Agent': 'Mozilla/5.0'})
+              with urllib.request.urlopen(req, timeout=15) as r:
+                  healthy = (r.status == 200)
+          except Exception as e:
+              print(f'健康检查异常: {e}')
+          print(f'服务健康: {healthy}')
+
+          if healthy and status == 'Running':
+              print('✅ 一切正常')
+              sys.exit(0)
+
+          # 3. 状态异常时 restart
+          if status == 'Creating':
+              print('⚠️ 正在创建中，无法 restart，等待自动完成')
+              sys.exit(0)
+
+          print('🔄 触发 restart...')
+          result = http_json(
+              f'https://www.modelscope.cn/api/v1/studio/{OWNER}/{NAME}/restart',
+              method='PUT',
+              data={},
+          )
+          print(f'restart 结果: {result}')
+          "
+        env:
+          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}

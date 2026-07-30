@@ -1,14 +1,13 @@
 name: Deploy to ModelScope Studio
 
+# 借鉴 MedEvidence-AI 实战经验 + modelscope-studio-manager Skill
+# 用 cookie 认证的私有 API（比 OpenAPI 更成熟稳定）
+#
 # 触发条件：推送到 main/master 分支，或手动触发
 on:
   push:
     branches: [main, master]
   workflow_dispatch:
-
-# 魔搭 OpenAPI 基础地址（国内站）
-env:
-  MS_ENDPOINT: https://modelscope.cn
 
 jobs:
   deploy:
@@ -16,7 +15,7 @@ jobs:
     timeout-minutes: 20
     steps:
       # ----------------------------------------------------------------------
-      # 1. 拉取代码（fetch-depth: 0 保留完整历史，便于与魔搭 master 分支合并）
+      # 1. 拉取代码
       # ----------------------------------------------------------------------
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,84 +23,24 @@ jobs:
           fetch-depth: 0
 
       # ----------------------------------------------------------------------
-      # 2. 自动获取 ModelScope owner（从 /users/me 接口读用户名，避免硬编码）
-      # ----------------------------------------------------------------------
-      - name: Resolve ModelScope owner
-        id: owner
-        env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-        run: |
-          if [ -z "$MODELSCOPE_API_KEY" ]; then
-            echo "::error::MODELSCOPE_API_KEY secret 未配置"
-            exit 1
-          fi
-          OWNER=$(curl -s "$MS_ENDPOINT/openapi/v1/users/me" \
-            -H "Authorization: Bearer $MODELSCOPE_API_KEY" | jq -r '.data.name')
-          if [ -z "$OWNER" ] || [ "$OWNER" = "null" ]; then
-            echo "::error::无法获取 ModelScope 用户名，请检查 MODELSCOPE_API_KEY 是否有效"
-            exit 1
-          fi
-          echo "owner=$OWNER" >> $GITHUB_OUTPUT
-          echo "✅ ModelScope owner: $OWNER"
-
-      # ----------------------------------------------------------------------
-      # 3. 创建创空间（首次运行时自动创建，后续跳过）
-      #    创空间名优先用 Variables.MS_REPO_NAME，默认 home-chem-safety-agent
-      # ----------------------------------------------------------------------
-      - name: Create Studio if not exists
-        id: create
-        env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
-        run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
-            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO" \
-            -H "Authorization: Bearer $MODELSCOPE_API_KEY")
-
-          if [ "$STATUS" = "404" ]; then
-            echo "🔧 创空间不存在，创建 $MS_OWNER/$MS_REPO ..."
-            HTTP_CODE=$(curl -s -o /tmp/create.json -w "%{http_code}" -X POST \
-              "$MS_ENDPOINT/openapi/v1/studios" \
-              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d '{
-                "owner": "'"$MS_OWNER"'",
-                "repo_name": "'"$MS_REPO"'",
-                "sdk_type": "docker",
-                "visibility": "public",
-                "hardware": "platform/2v-cpu-16g-mem",
-                "display_name": "安居智评 Agent"
-              }')
-            cat /tmp/create.json
-            if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
-              echo "::error::创建创空间失败 (HTTP $HTTP_CODE)"
-              exit 1
-            fi
-            echo "✅ 创空间创建成功，等待初始化..."
-            sleep 20
-          elif [ "$STATUS" = "200" ]; then
-            echo "ℹ️ 创空间已存在"
-          else
-            echo "::error::查询创空间失败 (HTTP $STATUS)"
-            exit 1
-          fi
-          echo "repo=$MS_REPO" >> $GITHUB_OUTPUT
-
-      # ----------------------------------------------------------------------
-      # 4. 推送代码到魔搭创空间 Git 仓库（master 分支）
+      # 2. 推送代码到魔搭创空间 Git 仓库（master 分支）
       #    魔搭默认分支是 master，GitHub 是 main，用 HEAD:master 映射
       # ----------------------------------------------------------------------
       - name: Push code to ModelScope
         env:
           MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
+          MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
+          if [ -z "$MODELSCOPE_API_KEY" ]; then
+            echo "::error::MODELSCOPE_API_KEY secret 未配置"
+            exit 1
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          MS_HOST="${MS_ENDPOINT#https://}"
+          MS_HOST="www.modelscope.cn"
           git remote add modelscope "https://oauth2:${MODELSCOPE_API_KEY}@${MS_HOST}/studios/${MS_OWNER}/${MS_REPO}.git"
 
           # 拉取远程 master 分支（首次为空时跳过）
@@ -123,82 +62,76 @@ jobs:
           echo "✅ 代码推送完成"
 
       # ----------------------------------------------------------------------
-      # 5. 配置 DASHSCOPE_API_KEY 为 Secret（敏感信息，不会回显）
+      # 3. 用 cookie API 查询创空间状态 + 触发 restart 重新部署
+      #    借鉴 modelscope-studio-manager Skill 的私有 API 方案
       # ----------------------------------------------------------------------
-      - name: Configure DASHSCOPE_API_KEY secret
+      - name: Restart Studio to trigger redeploy
         env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
-          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
+          MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
-          if [ -z "$DASHSCOPE_API_KEY" ]; then
-            echo "::error::DASHSCOPE_API_KEY secret 未配置"
+          if [ -z "$MODELSCOPE_COOKIE" ]; then
+            echo "::error::MODELSCOPE_COOKIE secret 未配置（从 ~/.modelscope/credentials/cookies 获取）"
             exit 1
           fi
-          # 先尝试 POST 新增，已存在则 PUT 更新
-          HTTP_CODE=$(curl -s -o /tmp/secret.json -w "%{http_code}" -X POST \
-            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/secrets" \
-            -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
-            -H "Content-Type: application/json" \
-            -d '{"key": "DASHSCOPE_API_KEY", "value": "'"$DASHSCOPE_API_KEY"'"}')
-          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
-            echo "Secret 已存在，改用 PUT 更新..."
-            curl -s -X PUT \
-              "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/secrets" \
-              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d '{"key": "DASHSCOPE_API_KEY", "value": "'"$DASHSCOPE_API_KEY"'"}'
+
+          echo "📋 查询创空间当前状态..."
+          STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
+            -H "Cookie: $MODELSCOPE_COOKIE" \
+            -H "User-Agent: Mozilla/5.0" \
+            -H "Accept: application/json" | jq -r '.Data.Status // empty')
+          echo "当前状态: $STATUS"
+
+          if [ "$STATUS" = "Creating" ]; then
+            echo "⚠️ 创空间正在创建中，无法 restart，需等待自动完成"
+            exit 0
           fi
-          echo "✅ DASHSCOPE_API_KEY secret 配置完成"
 
-      # ----------------------------------------------------------------------
-      # 6. 配置 PORT=7860 为明文变量（非敏感配置）
-      # ----------------------------------------------------------------------
-      - name: Configure PORT variable
-        env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
-        run: |
-          HTTP_CODE=$(curl -s -o /tmp/var.json -w "%{http_code}" -X POST \
-            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/variables" \
-            -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+          echo "🔄 触发 restart 重新部署..."
+          curl -s -X PUT \
+            "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}/restart" \
+            -H "Cookie: $MODELSCOPE_COOKIE" \
             -H "Content-Type: application/json" \
-            -d '{"key": "PORT", "value": "7860"}')
-          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "201" ]; then
-            echo "Variable 已存在，改用 PUT 更新..."
-            curl -s -X PUT \
-              "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/variables" \
-              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
-              -H "Content-Type: application/json" \
-              -d '{"key": "PORT", "value": "7860"}'
-          fi
-          echo "✅ PORT=7860 变量配置完成"
+            -H "User-Agent: Mozilla/5.0" \
+            -H "Accept: application/json" \
+            -H "Referer: https://www.modelscope.cn/studios/${MS_OWNER}/${MS_REPO}/summary" \
+            -d '{}'
+          echo ""
+          echo "✅ restart 已触发"
 
       # ----------------------------------------------------------------------
-      # 7. 触发部署
+      # 3.5 提示用户在创空间设置页配置环境变量
+      #      （魔搭 API 不支持远程设置密文变量，必须网页手动配置，借鉴 MedEvidence-AI 经验）
       # ----------------------------------------------------------------------
-      - name: Deploy Studio
-        env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
+      - name: Remind to configure env vars
+        if: always()
         run: |
-          echo "🚀 触发部署..."
-          curl -s -X POST \
-            "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/deploy" \
-            -H "Authorization: Bearer $MODELSCOPE_API_KEY"
-          echo "✅ 部署已触发"
+          echo "=========================================="
+          echo "⚠️  重要：请在魔搭创空间设置页配置环境变量"
+          echo "=========================================="
+          echo "访问: https://www.modelscope.cn/studios/${{ vars.MS_OWNER || 'gsym236998' }}/${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}/setting"
+          echo ""
+          echo "需要配置的【密文变量】（敏感信息）："
+          echo "  - DASHSCOPE_API_KEY: 百炼业务空间 API Key（sk-ws-xxx）"
+          echo "  - DASHSCOPE_API_BASE: https://llm-uarugoa0rqgduef5.cn-beijing.maas.aliyuncs.com/api/v1"
+          echo ""
+          echo "需要配置的【明文变量】（非敏感配置）："
+          echo "  - PORT: 7860（与 Dockerfile 一致）"
+          echo "  - QWEN3_MODEL: qwen-plus（可选，默认即此值）"
+          echo "  - QWEN_VL_MODEL: qwen-vl-plus（可选，默认即此值）"
+          echo ""
+          echo "⚠️  业务空间 Key 必须配 DASHSCOPE_API_BASE，否则鉴权失败！"
+          echo "=========================================="
 
       # ----------------------------------------------------------------------
-      # 8. 监控构建和运行日志（最多 15 分钟）
+      # 4. 监控部署状态（最多 15 分钟）
       # ----------------------------------------------------------------------
       - name: Monitor deployment
         env:
-          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
+          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
+          MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
           echo "⏳ 等待 30 秒让构建启动..."
           sleep 30
@@ -207,10 +140,12 @@ jobs:
             echo ""
             echo "=== 第 $i/30 次检查 ==="
 
-            # 查询状态
-            STATUS=$(curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO" \
-              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
-              | jq -r '.data.status // empty')
+            STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
+              -H "Cookie: $MODELSCOPE_COOKIE" \
+              -H "User-Agent: Mozilla/5.0" | jq -r '.Data.Status // empty')
+            FAILED_MSG=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
+              -H "Cookie: $MODELSCOPE_COOKIE" \
+              -H "User-Agent: Mozilla/5.0" | jq -r '.Data.FailedMessage // empty')
             echo "状态: $STATUS"
 
             if [ "$STATUS" = "Running" ]; then
@@ -219,21 +154,11 @@ jobs:
               exit 0
             fi
 
-            if [ "$STATUS" = "Error" ] || [ "$STATUS" = "Failed" ]; then
-              echo "❌ 部署失败，构建日志："
-              curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/build" \
-                -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -80
-              echo ""
-              echo "运行日志："
-              curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/run" \
-                -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -30
+            if [ "$STATUS" = "Failed" ] || [ "$STATUS" = "Error" ]; then
+              echo "❌ 部署失败"
+              echo "失败原因: $FAILED_MSG"
               exit 1
             fi
-
-            # 打印最近的构建日志（最后 5 行）
-            echo "--- 构建日志（最后 5 行）---"
-            curl -s "$MS_ENDPOINT/openapi/v1/studios/$MS_OWNER/$MS_REPO/logs/build" \
-              -H "Authorization: Bearer $MODELSCOPE_API_KEY" | tail -5
 
             sleep 30
           done
@@ -242,18 +167,36 @@ jobs:
           exit 1
 
       # ----------------------------------------------------------------------
-      # 9. 输出最终 URL
+      # 5. 健康检查 + 输出最终 URL
       # ----------------------------------------------------------------------
-      - name: Output Studio URL
+      - name: Health check and output URL
         if: always()
         env:
-          MS_OWNER: ${{ steps.owner.outputs.owner }}
-          MS_REPO: ${{ steps.create.outputs.repo }}
+          MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
+          # 魔搭创空间域名格式：https://{owner}-{repo}.mn1.modelscope.cn
+          SERVICE_URL="https://${MS_OWNER}-${MS_REPO}.mn1.modelscope.cn"
+
           echo "=========================================="
           echo "🏠 安居智评 Agent 部署信息"
           echo "=========================================="
-          echo "魔搭创空间 URL: $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO"
-          echo "健康检查:       $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO/health"
-          echo "API 文档:       $MS_ENDPOINT/studios/$MS_OWNER/$MS_REPO/docs"
+          echo "魔搭创空间页面: https://www.modelscope.cn/studios/${MS_OWNER}/${MS_REPO}"
+          echo "服务 URL:       $SERVICE_URL"
+          echo "健康检查:       $SERVICE_URL/health"
+          echo "API 文档:       $SERVICE_URL/docs"
           echo "=========================================="
+
+          # 健康检查（部署成功才检查）
+          STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
+            -H "Cookie: ${{ secrets.MODELSCOPE_COOKIE }}" \
+            -H "User-Agent: Mozilla/5.0" | jq -r '.Data.Status // empty')
+          if [ "$STATUS" = "Running" ]; then
+            echo "🔍 健康检查..."
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SERVICE_URL/health" || echo "000")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "✅ 健康检查通过"
+            else
+              echo "⚠️ 健康检查返回 $HTTP_CODE（服务可能还在启动中，稍后再试）"
+            fi
+          fi
