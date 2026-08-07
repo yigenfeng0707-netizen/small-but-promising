@@ -12,7 +12,7 @@ if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
 
 COOKIE = os.getenv("MODELSCOPE_COOKIE", "")
 STUDIO_URL = "https://www.modelscope.cn/studios/gsym236998/home-chem-safety-agent/setting"
-SCREENSHOT_DIR = os.getenv("GITHUB_WORKSPACE", "/tmp")
+SCREENSHOT_DIR = "/tmp"
 
 ENV_VARS = {
     "DASHSCOPE_API_KEY": "sk-ws-H.EIRDHML.1AHp.MEQCIGfD_6V_frAVyWiFA-ZWTjM7LRwmEvS731atmPSxgtZtAiAU9no7HB8nrG1DSrOY9BRLASNRShBBKQ1Meel5UAG_yQ",

@@ -34,6 +34,7 @@ jobs:
           name: screenshots
           path: /tmp/ms_*.png
           retention-days: 1
+          if-no-files-found: ignore
 
       - name: Also try API approach
         env:
