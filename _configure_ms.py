@@ -77,6 +77,31 @@ def main():
         # Take initial screenshot
         page.screenshot(path=f"{SCREENSHOT_DIR}/ms_step1.png", full_page=True)
 
+        # Debug: print all buttons and interactive elements
+        buttons = page.locator("button").all()
+        print(f"[DEBUG] Found {len(buttons)} buttons:")
+        for i, btn in enumerate(buttons):
+            text = btn.inner_text().strip()
+            cls = btn.get_attribute("class") or ""
+            if text:
+                print(f"  [{i}] text='{text}' class='{cls[:60]}'")
+
+        # Debug: print all links
+        links = page.locator("a").all()
+        print(f"[DEBUG] Found {len(links)} links:")
+        for i, link in enumerate(links[:20]):
+            text = link.inner_text().strip()
+            href = link.get_attribute("href") or ""
+            if text:
+                print(f"  [{i}] text='{text[:30]}' href='{href[:50]}'")
+
+        # Debug: look for text containing keywords
+        keywords = ["变量", "环境", "配置", "env", "setting", "密钥", "key", "保存", "重启", "端口"]
+        for kw in keywords:
+            elems = page.locator(f"text={kw}").all()
+            if elems:
+                print(f"[DEBUG] Found {len(elems)} elements with text '{kw}'")
+
         # Strategy 1: Look for tabs/sections and click "环境变量" or "配置"
         tab_selectors = [
             "text=环境变量",
