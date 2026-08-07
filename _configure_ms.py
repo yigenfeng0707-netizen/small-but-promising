@@ -12,6 +12,7 @@ if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
 
 COOKIE = os.getenv("MODELSCOPE_COOKIE", "")
 STUDIO_URL = "https://www.modelscope.cn/studios/gsym236998/home-chem-safety-agent/setting"
+SCREENSHOT_DIR = os.getenv("GITHUB_WORKSPACE", "/tmp")
 
 ENV_VARS = {
     "DASHSCOPE_API_KEY": "sk-ws-H.EIRDHML.1AHp.MEQCIGfD_6V_frAVyWiFA-ZWTjM7LRwmEvS731atmPSxgtZtAiAU9no7HB8nrG1DSrOY9BRLASNRShBBKQ1Meel5UAG_yQ",
@@ -74,7 +75,7 @@ def main():
         print(f"[INFO] Title: {page.title()}")
 
         # Take initial screenshot
-        page.screenshot(path="/tmp/ms_step1.png")
+        page.screenshot(path=f"{SCREENSHOT_DIR}/ms_step1.png", full_page=True)
 
         # Strategy 1: Look for tabs/sections and click "环境变量" or "配置"
         tab_selectors = [
@@ -147,7 +148,7 @@ def main():
                 else:
                     print(f"[WARN] Not enough input fields for {key}")
 
-        page.screenshot(path="/tmp/ms_step2.png")
+        page.screenshot(path=f"{SCREENSHOT_DIR}/ms_step2.png", full_page=True)
         print(f"[INFO] Configured {success_count}/{len(ENV_VARS)} vars")
 
         # Save/Confirm
@@ -176,7 +177,7 @@ def main():
             print("[INFO] Clicked restart")
             page.wait_for_timeout(2000)
 
-        page.screenshot(path="/tmp/ms_step3.png")
+        page.screenshot(path=f"{SCREENSHOT_DIR}/ms_step3.png")
         browser.close()
 
         if success_count == len(ENV_VARS):

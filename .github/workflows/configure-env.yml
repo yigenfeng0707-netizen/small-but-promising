@@ -27,6 +27,14 @@ jobs:
           MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
         run: python _configure_ms.py
 
+      - name: Upload screenshots for debugging
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: /tmp/ms_*.png
+          retention-days: 1
+
       - name: Also try API approach
         env:
           MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
