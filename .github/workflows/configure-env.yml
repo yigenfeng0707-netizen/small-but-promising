@@ -1,0 +1,59 @@
+name: Configure ModelScope Env Vars
+
+# 手动触发：配置魔搭创空间环境变量
+on:
+  workflow_dispatch:
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Configure env vars via browser
+        env:
+          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
+        run: python _configure_ms.py
+
+      - name: Also try API approach
+        env:
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
+        run: |
+          echo "Trying API approach to configure env vars..."
+
+          # Try the cookie-based API with various endpoints
+          COOKIE="${{ secrets.MODELSCOPE_COOKIE }}"
+
+          # Try to get current settings
+          echo "=== Getting current studio settings ==="
+          curl -s "https://www.modelscope.cn/api/v1/studio/gsym236998/home-chem-safety-agent" \
+            -H "Cookie: $COOKIE" \
+            -H "User-Agent: Mozilla/5.0" | python -m json.tool 2>/dev/null || echo "Failed"
+
+          # Try to update env vars via POST
+          echo "=== Trying to update env vars ==="
+          curl -s -X POST "https://www.modelscope.cn/api/v1/studio/gsym236998/home-chem-safety-agent/setting" \
+            -H "Cookie: $COOKIE" \
+            -H "User-Agent: Mozilla/5.0" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "env_vars": {
+                "DASHSCOPE_API_KEY": "${{ secrets.DASHSCOPE_API_KEY }}",
+                "DASHSCOPE_API_BASE": "https://llm-uarugoa0rqgduef5.cn-beijing.maas.aliyuncs.com/api/v1",
+                "PORT": "7860",
+                "QWEN3_MODEL": "qwen-plus",
+                "QWEN_VL_MODEL": "qwen-vl-plus"
+              }
+            }' | python -m json.tool 2>/dev/null || echo "API approach failed - need browser automation"
