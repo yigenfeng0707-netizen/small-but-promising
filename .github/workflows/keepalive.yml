@@ -1,0 +1,48 @@
+name: ModelScope Keepalive
+
+# 保持魔搭创空间服务不被休眠
+# 魔搭免费版容器在空闲一段时间后会冷启动，通过高频心跳保活
+#
+# 触发条件：
+#   - 每 5 分钟自动运行（GitHub Actions 最小间隔）
+#   - 手动触发（workflow_dispatch）
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Ping service health endpoint
+        env:
+          OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
+        run: |
+          SERVICE_URL="https://${OWNER}-${REPO}.ms.show"
+          echo "🏓 Pinging $SERVICE_URL/health ..."
+
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+            --max-time 30 \
+            "$SERVICE_URL/health" || echo "000")
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "✅ 服务存活 (HTTP $HTTP_CODE) - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          elif [ "$HTTP_CODE" = "000" ]; then
+            echo "⚠️ 服务无响应（可能正在冷启动），下次心跳将恢复"
+          else
+            echo "⚠️ 服务异常 (HTTP $HTTP_CODE)"
+          fi
+
+      - name: Warm up main page
+        env:
+          OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
+          REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
+        run: |
+          SERVICE_URL="https://${OWNER}-${REPO}.ms.show"
+          echo "🔥 预热主页..."
+          curl -s -o /dev/null --max-time 30 "$SERVICE_URL/" || true
+          echo "✅ 预热完成"

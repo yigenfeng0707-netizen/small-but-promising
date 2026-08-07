@@ -104,43 +104,30 @@ jobs:
           echo "✅ 代码推送完成"
 
       # ----------------------------------------------------------------------
-      # 4. 用 cookie API 查询创空间状态 + 触发 restart 重新部署
-      #    借鉴 modelscope-studio-manager Skill 的私有 API 方案
+      # 4. 触发部署（用 OpenAPI deploy 端点，支持首次部署和重新部署）
+      #    实战经验：restart API 对首次部署/Empty 状态无效，必须用 deploy 端点
       # ----------------------------------------------------------------------
-      - name: Restart Studio to trigger redeploy
+      - name: Deploy Studio
         env:
-          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
           MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
           MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
-          if [ -z "$MODELSCOPE_COOKIE" ]; then
-            echo "::error::MODELSCOPE_COOKIE secret 未配置（从 ~/.modelscope/credentials/cookies 获取）"
+          echo "🚀 触发部署（OpenAPI deploy 端点）..."
+          HTTP_CODE=$(curl -s -o /tmp/deploy.json -w "%{http_code}" -X POST \
+            "https://modelscope.cn/openapi/v1/studios/${MS_OWNER}/${MS_REPO}/deploy" \
+            -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+            -H "Content-Type: application/json" \
+            -H "User-Agent: Mozilla/5.0")
+          cat /tmp/deploy.json
+          echo ""
+          if [ "$HTTP_CODE" = "200" ]; then
+            STATUS=$(cat /tmp/deploy.json | jq -r '.data.status // empty')
+            echo "✅ 部署已触发，状态: $STATUS"
+          else
+            echo "::error::部署触发失败 (HTTP $HTTP_CODE)"
             exit 1
           fi
-
-          echo "📋 查询创空间当前状态..."
-          STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
-            -H "Cookie: $MODELSCOPE_COOKIE" \
-            -H "User-Agent: Mozilla/5.0" \
-            -H "Accept: application/json" | jq -r '.Data.Status // empty')
-          echo "当前状态: $STATUS"
-
-          if [ "$STATUS" = "Creating" ]; then
-            echo "⚠️ 创空间正在创建中，无法 restart，需等待自动完成"
-            exit 0
-          fi
-
-          echo "🔄 触发 restart 重新部署..."
-          curl -s -X PUT \
-            "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}/restart" \
-            -H "Cookie: $MODELSCOPE_COOKIE" \
-            -H "Content-Type: application/json" \
-            -H "User-Agent: Mozilla/5.0" \
-            -H "Accept: application/json" \
-            -H "Referer: https://www.modelscope.cn/studios/${MS_OWNER}/${MS_REPO}/summary" \
-            -d '{}'
-          echo ""
-          echo "✅ restart 已触发"
 
       # ----------------------------------------------------------------------
       # 5. 提示用户在创空间设置页配置环境变量
@@ -171,7 +158,7 @@ jobs:
       # ----------------------------------------------------------------------
       - name: Monitor deployment
         env:
-          MODELSCOPE_COOKIE: ${{ secrets.MODELSCOPE_COOKIE }}
+          MODELSCOPE_API_KEY: ${{ secrets.MODELSCOPE_API_KEY }}
           MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
           MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
@@ -182,12 +169,9 @@ jobs:
             echo ""
             echo "=== 第 $i/30 次检查 ==="
 
-            STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
-              -H "Cookie: $MODELSCOPE_COOKIE" \
-              -H "User-Agent: Mozilla/5.0" | jq -r '.Data.Status // empty')
-            FAILED_MSG=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
-              -H "Cookie: $MODELSCOPE_COOKIE" \
-              -H "User-Agent: Mozilla/5.0" | jq -r '.Data.FailedMessage // empty')
+            STATUS=$(curl -s "https://modelscope.cn/openapi/v1/studios/${MS_OWNER}/${MS_REPO}" \
+              -H "Authorization: Bearer $MODELSCOPE_API_KEY" \
+              -H "User-Agent: Mozilla/5.0" | jq -r '.data.status // empty')
             echo "状态: $STATUS"
 
             if [ "$STATUS" = "Running" ]; then
@@ -198,7 +182,6 @@ jobs:
 
             if [ "$STATUS" = "Failed" ] || [ "$STATUS" = "Error" ]; then
               echo "❌ 部署失败"
-              echo "失败原因: $FAILED_MSG"
               exit 1
             fi
 
@@ -217,8 +200,8 @@ jobs:
           MS_OWNER: ${{ vars.MS_OWNER || 'gsym236998' }}
           MS_REPO: ${{ vars.MS_REPO_NAME || 'home-chem-safety-agent' }}
         run: |
-          # 魔搭创空间域名格式：https://{owner}-{repo}.mn1.modelscope.cn
-          SERVICE_URL="https://${MS_OWNER}-${MS_REPO}.mn1.modelscope.cn"
+          # 魔搭创空间域名格式：https://{owner}-{repo}.ms.show
+          SERVICE_URL="https://${MS_OWNER}-${MS_REPO}.ms.show"
 
           echo "=========================================="
           echo "🏠 安居智评 Agent 部署信息"
@@ -230,9 +213,9 @@ jobs:
           echo "=========================================="
 
           # 健康检查（部署成功才检查）
-          STATUS=$(curl -s "https://www.modelscope.cn/api/v1/studio/${MS_OWNER}/${MS_REPO}" \
-            -H "Cookie: ${{ secrets.MODELSCOPE_COOKIE }}" \
-            -H "User-Agent: Mozilla/5.0" | jq -r '.Data.Status // empty')
+          STATUS=$(curl -s "https://modelscope.cn/openapi/v1/studios/${MS_OWNER}/${MS_REPO}" \
+            -H "Authorization: Bearer ${{ secrets.MODELSCOPE_API_KEY }}" \
+            -H "User-Agent: Mozilla/5.0" | jq -r '.data.status // empty')
           if [ "$STATUS" = "Running" ]; then
             echo "🔍 健康检查..."
             HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SERVICE_URL/health" || echo "000")
