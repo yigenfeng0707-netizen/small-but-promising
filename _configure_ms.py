@@ -77,30 +77,45 @@ def main():
         # Take initial screenshot
         page.screenshot(path=f"{SCREENSHOT_DIR}/ms_step1.png", full_page=True)
 
-        # Debug: print all buttons and interactive elements
+        # The /setting page shows minimal content - try the main studio page
+        main_url = "https://www.modelscope.cn/studios/gsym236998/home-chem-safety-agent"
+        print(f"[INFO] Trying main studio page: {main_url}")
+        page.goto(main_url, wait_until="networkidle", timeout=30000)
+        page.wait_for_timeout(3000)
+
+        page.screenshot(path=f"{SCREENSHOT_DIR}/ms_main.png", full_page=True)
+        print(f"[INFO] Main page title: {page.title()}")
+
+        # Debug: print all buttons
         buttons = page.locator("button").all()
-        print(f"[DEBUG] Found {len(buttons)} buttons:")
+        print(f"[DEBUG] Found {len(buttons)} buttons on main page:")
         for i, btn in enumerate(buttons):
             text = btn.inner_text().strip()
             cls = btn.get_attribute("class") or ""
-            if text:
-                print(f"  [{i}] text='{text}' class='{cls[:60]}'")
+            if text and len(text) < 50:
+                print(f"  [{i}] text='{text}'")
 
-        # Debug: print all links
-        links = page.locator("a").all()
-        print(f"[DEBUG] Found {len(links)} links:")
-        for i, link in enumerate(links[:20]):
-            text = link.inner_text().strip()
-            href = link.get_attribute("href") or ""
-            if text:
-                print(f"  [{i}] text='{text[:30]}' href='{href[:50]}'")
+        # Look for Settings link/button
+        setting_selectors = [
+            "text=Settings",
+            "text=设置",
+            "text=配置",
+            "text=环境变量",
+            "text=Env Vars",
+            "a:has-text('Settings')",
+            "a:has-text('设置')",
+            "button:has-text('Settings')",
+            "button:has-text('设置')",
+        ]
+        for sel in setting_selectors:
+            elem = page.locator(sel).first
+            if elem.count() > 0:
+                print(f"[FOUND] Settings element: {sel}")
+                elem.click()
+                page.wait_for_timeout(2000)
+                break
 
-        # Debug: look for text containing keywords
-        keywords = ["变量", "环境", "配置", "env", "setting", "密钥", "key", "保存", "重启", "端口"]
-        for kw in keywords:
-            elems = page.locator(f"text={kw}").all()
-            if elems:
-                print(f"[DEBUG] Found {len(elems)} elements with text '{kw}'")
+        page.screenshot(path=f"{SCREENSHOT_DIR}/ms_after_click.png", full_page=True)
 
         # Strategy 1: Look for tabs/sections and click "环境变量" or "配置"
         tab_selectors = [
