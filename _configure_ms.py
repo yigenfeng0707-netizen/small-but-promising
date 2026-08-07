@@ -1,25 +1,17 @@
 """
-自动配置魔搭创空间环境变量
-使用 Playwright 浏览器自动化，通过 cookie 认证
-
-运行方式:
-    python _configure_ms.py
-
-需要环境变量:
-    MODELSCOPE_COOKIE - 魔搭登录 cookie
+自动配置魔搭创空间环境变量 - 改进版
+更健壮的页面交互逻辑
 """
 import os
 import sys
 import time
 from playwright.sync_api import sync_playwright
 
-# Fix Windows console encoding
 if sys.stdout and hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 COOKIE = os.getenv("MODELSCOPE_COOKIE", "")
 STUDIO_URL = "https://www.modelscope.cn/studios/gsym236998/home-chem-safety-agent/setting"
-SERVICE_URL = "https://gsym236998-home-chem-safety-agent.ms.show"
 
 ENV_VARS = {
     "DASHSCOPE_API_KEY": "sk-ws-H.EIRDHML.1AHp.MEQCIGfD_6V_frAVyWiFA-ZWTjM7LRwmEvS731atmPSxgtZtAiAU9no7HB8nrG1DSrOY9BRLASNRShBBKQ1Meel5UAG_yQ",
@@ -31,7 +23,6 @@ ENV_VARS = {
 
 
 def parse_cookies(cookie_str: str) -> list:
-    """Parse cookie string into Playwright cookie format."""
     cookies = []
     for pair in cookie_str.split(";"):
         pair = pair.strip()
@@ -46,6 +37,19 @@ def parse_cookies(cookie_str: str) -> list:
     return cookies
 
 
+def wait_and_click(page, selectors, timeout=5000):
+    """Try multiple selectors and click the first one found."""
+    for sel in selectors:
+        try:
+            elem = page.locator(sel).first
+            if elem.count() > 0 and elem.is_visible():
+                elem.click()
+                return True
+        except Exception:
+            continue
+    return False
+
+
 def main():
     if not COOKIE:
         print("[ERROR] MODELSCOPE_COOKIE not set")
@@ -53,144 +57,136 @@ def main():
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
-        context = browser.new_context()
-
-        # Set cookies
-        cookies = parse_cookies(COOKIE)
-        context.add_cookies(cookies)
-
+        context = browser.new_context(
+            viewport={"width": 1920, "height": 1080}
+        )
+        context.add_cookies(parse_cookies(COOKIE))
         page = context.new_page()
+
         print(f"[INFO] Navigating to: {STUDIO_URL}")
         page.goto(STUDIO_URL, wait_until="networkidle", timeout=30000)
-        time.sleep(2)
+        page.wait_for_timeout(3000)
 
-        # Check if login is required
         if "login" in page.url.lower():
-            print("[ERROR] Login required - cookie may be expired")
-            print("[INFO] Please update MODELSCOPE_COOKIE")
-            browser.close()
+            print("[ERROR] Login required - cookie expired")
             return False
 
-        title = page.title()
-        url = page.url
-        print(f"[INFO] Page title: {title}")
-        print(f"[INFO] Current URL: {url}")
+        print(f"[INFO] Title: {page.title()}")
 
-        # Take screenshot
-        page.screenshot(path="/tmp/ms_setting_page.png")
-        print("[INFO] Screenshot saved: /tmp/ms_setting_page.png")
+        # Take initial screenshot
+        page.screenshot(path="/tmp/ms_step1.png")
 
-        # Look for env var configuration elements
-        # ModelScope uses a dynamic form - look for common patterns
-        page.wait_for_timeout(2000)
+        # Strategy 1: Look for tabs/sections and click "环境变量" or "配置"
+        tab_selectors = [
+            "text=环境变量",
+            "text=Env Vars",
+            "text=环境配置",
+            "text=配置",
+            "text=Setting",
+            "a:has-text('环境变量')",
+            "div:has-text('环境变量')",
+            "span:has-text('环境变量')",
+        ]
+        clicked = wait_and_click(page, tab_selectors)
+        if clicked:
+            print("[INFO] Clicked env vars tab/section")
+            page.wait_for_timeout(1000)
 
-        # Try to find and click "环境变量" or "Env Vars" section
-        env_keywords = ["环境变量", "Env", "配置", "Setting", "变量"]
-        for kw in env_keywords:
-            elem = page.locator(f"text={kw}").first
-            if elem.count() > 0:
-                print(f"[FOUND] '{kw}' element")
-                elem.click()
-                time.sleep(1)
-                break
-
-        # Try to find input fields
-        inputs = page.locator("input[type=text], input:not([type]), textarea").all()
-        print(f"[INFO] Found {len(inputs)} input fields")
-
-        for i, inp in enumerate(inputs):
-            attrs = {}
-            for attr in ["name", "placeholder", "value", "type"]:
-                val = inp.get_attribute(attr)
-                if val:
-                    attrs[attr] = val
-            print(f"  [{i}] {attrs}")
-
-        # Try to add env vars by clicking "添加" or "+" button
+        # Strategy 2: Look for "添加" / "+" / "新增变量" button
         add_selectors = [
+            "button:has-text('添加变量')",
             "button:has-text('添加')",
             "button:has-text('新增')",
-            "button:has-text('Add')",
             "button:has-text('+')",
-            "button:has-text('添加变量')",
+            "a:has-text('添加')",
+            "div.add-btn",
+            "span.add-btn",
+            "[class*='add']",
         ]
 
-        added_count = 0
+        success_count = 0
         for key, value in ENV_VARS.items():
-            # Try to find existing input for this key
-            existing = page.locator(f"input[name='{key}'], input[placeholder*='{key}']").first
-            if existing.count() > 0:
-                existing.fill(value)
+            # Click "Add" button to add a new row
+            added = wait_and_click(page, add_selectors)
+            if added:
+                print(f"[INFO] Clicked add button for {key}")
+                page.wait_for_timeout(500)
+
+            # Find all available inputs - look for empty ones
+            all_inputs = page.locator("input").all()
+            empty_inputs = [inp for inp in all_inputs if not (inp.get_attribute("value") or "").strip()]
+
+            if len(empty_inputs) >= 2:
+                # First empty input = key, second = value
+                empty_inputs[0].fill(key)
+                empty_inputs[1].fill(value)
                 print(f"[SET] {key} = {value[:20]}...")
-                added_count += 1
+                success_count += 1
+            elif len(empty_inputs) == 1:
+                # Single input - fill and look for companion
+                empty_inputs[0].fill(key)
+                # Try to find a sibling input
+                parent = empty_inputs[0].locator("..")
+                siblings = parent.locator("input").all()
+                if len(siblings) >= 2:
+                    siblings[-1].fill(value)
+                    print(f"[SET] {key} = {value[:20]}...")
+                    success_count += 1
+                else:
+                    print(f"[WARN] Could not find value input for {key}")
             else:
-                # Try to add new var
-                for sel in add_selectors:
-                    btn = page.locator(sel).first
-                    if btn.count() > 0:
-                        btn.click()
-                        time.sleep(0.5)
-                        # Find the new empty inputs
-                        new_inputs = page.locator("input[type=text], input:not([type])").all()
-                        for ni in new_inputs:
-                            if not ni.get_attribute("value"):
-                                ni.fill(key)
-                                # Find next sibling input for value
-                                parent = ni.locator("..")
-                                val_input = parent.locator("input").last
-                                val_input.fill(value)
-                                print(f"[ADD] {key} = {value[:20]}...")
-                                added_count += 1
-                                break
-                        break
+                # No empty inputs - try to find inputs by checking all
+                all_inputs = page.locator("input").all()
+                # Look for the last pair of inputs
+                if len(all_inputs) >= 2:
+                    # Fill last two inputs
+                    all_inputs[-2].fill(key)
+                    all_inputs[-1].fill(value)
+                    print(f"[SET] {key} = {value[:20]}...")
+                    success_count += 1
+                else:
+                    print(f"[WARN] Not enough input fields for {key}")
 
-        if added_count > 0:
-            time.sleep(1)
-            # Try to find and click save/confirm button
-            save_selectors = [
-                "button:has-text('保存')",
-                "button:has-text('确认')",
-                "button:has-text('Save')",
-                "button:has-text('Submit')",
-                "button:has-text('提交')",
-            ]
-            for sel in save_selectors:
-                btn = page.locator(sel).first
-                if btn.count() > 0:
-                    btn.click()
-                    print("[INFO] Clicked save button")
-                    time.sleep(2)
-                    break
+        page.screenshot(path="/tmp/ms_step2.png")
+        print(f"[INFO] Configured {success_count}/{len(ENV_VARS)} vars")
 
-            # Try to find and click restart button
-            restart_selectors = [
-                "button:has-text('重启')",
-                "button:has-text('Restart')",
-                "button:has-text('重启服务')",
-            ]
-            for sel in restart_selectors:
-                btn = page.locator(sel).first
-                if btn.count() > 0:
-                    btn.click()
-                    print("[INFO] Clicked restart button")
-                    time.sleep(2)
-                    break
+        # Save/Confirm
+        save_selectors = [
+            "button:has-text('保存')",
+            "button:has-text('确认')",
+            "button:has-text('Save')",
+            "button:has-text('Submit')",
+            "button:has-text('提交')",
+            "button:has-text('确定')",
+        ]
+        saved = wait_and_click(page, save_selectors)
+        if saved:
+            print("[INFO] Clicked save/confirm")
+            page.wait_for_timeout(2000)
 
-        page.screenshot(path="/tmp/ms_setting_after.png")
-        print("[INFO] After screenshot: /tmp/ms_setting_after.png")
+        # Restart
+        restart_selectors = [
+            "button:has-text('重启')",
+            "button:has-text('Restart')",
+            "button:has-text('重启服务')",
+            "button:has-text('重新启动')",
+        ]
+        restarted = wait_and_click(page, restart_selectors)
+        if restarted:
+            print("[INFO] Clicked restart")
+            page.wait_for_timeout(2000)
 
+        page.screenshot(path="/tmp/ms_step3.png")
         browser.close()
 
-        if added_count == len(ENV_VARS):
-            print(f"[SUCCESS] All {added_count} env vars configured!")
+        if success_count == len(ENV_VARS):
+            print(f"[SUCCESS] All env vars configured!")
             return True
-        elif added_count > 0:
-            print(f"[PARTIAL] {added_count}/{len(ENV_VARS)} env vars configured")
+        elif success_count > 0:
+            print(f"[PARTIAL] {success_count}/{len(ENV_VARS)} configured")
             return True
         else:
-            print("[WARN] Could not configure env vars automatically")
-            print("[INFO] Please configure manually at:")
-            print(f"       {STUDIO_URL}")
+            print("[FAILED] Could not configure automatically")
             return False
 
 
