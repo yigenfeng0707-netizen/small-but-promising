@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     REDIS_URL: str = "redis://localhost:6379"
     QWEN3_MODEL: str = "qwen-plus"
     QWEN_VL_MODEL: str = "qwen-vl-plus"
+    EMBEDDING_MODEL: str = "text-embedding-v3"
 
     # CORS 允许的前端来源，逗号分隔
     CORS_ORIGINS: str = "http://localhost:5173,http://127.0.0.1:5173"

@@ -2,9 +2,16 @@
   {
     "id": "msds_001",
     "name": "盐酸",
-    "aliases": ["氢氯酸", "盐镪水"],
+    "aliases": [
+      "氢氯酸",
+      "盐镪水"
+    ],
     "category": "清洁剂",
-    "common_products": ["洁厕灵", "威猛先生洁厕剂", "蓝月亮洁厕宝"],
+    "common_products": [
+      "洁厕灵",
+      "威猛先生洁厕剂",
+      "蓝月亮洁厕宝"
+    ],
     "hazard_level": "高",
     "toxicity": "强腐蚀性，对皮肤、眼睛、呼吸道有强刺激；吸入酸雾可致化学性肺炎",
     "flammability": "不燃，但与金属反应放出氢气，遇氰化物产生剧毒氰化氢",
@@ -16,14 +23,27 @@
     "first_aid_eye": "立即用大量清水或生理盐水冲洗 15 分钟以上并立即就医",
     "first_aid_inhalation": "迅速移至空气新鲜处，保持呼吸道通畅，必要时人工呼吸并就医",
     "storage": "密封避光储存，远离儿童、金属和碱类，与氨水、漂白剂隔离",
-    "green_alternatives": ["柠檬酸+小苏打", "白醋+食盐", "硼砂溶液"]
+    "green_alternatives": [
+      "柠檬酸+小苏打",
+      "白醋+食盐",
+      "硼砂溶液"
+    ]
   },
   {
     "id": "msds_002",
     "name": "次氯酸钠",
-    "aliases": ["漂白水", "次氯酸钙", "Antiformin"],
+    "aliases": [
+      "漂白水",
+      "次氯酸钙",
+      "Antiformin"
+    ],
     "category": "消毒剂",
-    "common_products": ["84消毒液", "威露士消毒液", "蓝月亮漂白水", "金纺除菌液"],
+    "common_products": [
+      "84消毒液",
+      "威露士消毒液",
+      "蓝月亮漂白水",
+      "金纺除菌液"
+    ],
     "hazard_level": "高",
     "toxicity": "强氧化性，释放氯气刺激呼吸道；与酸混合剧烈反应放出剧毒氯气",
     "flammability": "不燃，但可助燃",
@@ -35,14 +55,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处，如吸入氯气应保持半卧位并就医",
     "storage": "密封避光避热储存，单独存放，严禁与洁厕灵、酸性清洁剂、氨水混合",
-    "green_alternatives": ["高温蒸汽消毒", "白醋+小苏打清洁", "柠檬酸除菌"]
+    "green_alternatives": [
+      "高温蒸汽消毒",
+      "白醋+小苏打清洁",
+      "柠檬酸除菌"
+    ]
   },
   {
     "id": "msds_003",
     "name": "氢氧化钠",
-    "aliases": ["烧碱", "火碱", "苛性钠"],
+    "aliases": [
+      "烧碱",
+      "火碱",
+      "苛性钠"
+    ],
     "category": "清洁剂",
-    "common_products": ["管道疏通剂", "威猛先生管道通", "毛球清洁剂"],
+    "common_products": [
+      "管道疏通剂",
+      "威猛先生管道通",
+      "毛球清洁剂"
+    ],
     "hazard_level": "高",
     "toxicity": "强腐蚀性，可致深层组织坏死；溶解蛋白质和脂肪",
     "flammability": "不燃，遇水放热",
@@ -54,14 +86,27 @@
     "first_aid_eye": "立即用清水或生理盐水冲洗 30 分钟并立即就医",
     "first_aid_inhalation": "移至空气新鲜处，必要时给氧就医",
     "storage": "密封干燥储存，远离儿童、酸类、水和金属，单独存放",
-    "green_alternatives": ["热水+小苏打+盐疏通", "机械疏通器", "生物酶管道疏通剂"]
+    "green_alternatives": [
+      "热水+小苏打+盐疏通",
+      "机械疏通器",
+      "生物酶管道疏通剂"
+    ]
   },
   {
     "id": "msds_004",
     "name": "十二烷基苯磺酸钠",
-    "aliases": ["LAS", "烷基苯磺酸钠", "直链烷基苯磺酸钠"],
+    "aliases": [
+      "LAS",
+      "烷基苯磺酸钠",
+      "直链烷基苯磺酸钠"
+    ],
     "category": "清洁剂",
-    "common_products": ["洗洁精", "洗衣粉", "洗衣液", "立白洗洁精"],
+    "common_products": [
+      "洗洁精",
+      "洗衣粉",
+      "洗衣液",
+      "立白洗洁精"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，长期接触可致皮肤脱脂干燥",
     "flammability": "不燃",
@@ -73,14 +118,25 @@
     "first_aid_eye": "用清水冲洗 5 分钟以上，不适就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "阴凉干燥处储存，避免儿童误食",
-    "green_alternatives": ["茶籽粉", "无患子果皮提取液", "椰子油皂"]
+    "green_alternatives": [
+      "茶籽粉",
+      "无患子果皮提取液",
+      "椰子油皂"
+    ]
   },
   {
     "id": "msds_005",
     "name": "烷基糖苷",
-    "aliases": ["APG", "烷基多糖苷"],
+    "aliases": [
+      "APG",
+      "烷基多糖苷"
+    ],
     "category": "清洁剂",
-    "common_products": ["温和洗洁精", "婴儿奶瓶清洗剂", "果蔬清洗剂"],
+    "common_products": [
+      "温和洗洁精",
+      "婴儿奶瓶清洗剂",
+      "果蔬清洗剂"
+    ],
     "hazard_level": "低",
     "toxicity": "极低毒，对皮肤温和，可生物降解",
     "flammability": "不燃",
@@ -92,14 +148,26 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无需特殊处理",
     "storage": "常温储存",
-    "green_alternatives": ["本身即绿色成分"]
+    "green_alternatives": [
+      "本身即绿色成分"
+    ]
   },
   {
     "id": "msds_006",
     "name": "季铵盐",
-    "aliases": ["苯扎氯铵", "洁尔灭", "QAC", "双链季铵盐"],
+    "aliases": [
+      "苯扎氯铵",
+      "洁尔灭",
+      "QAC",
+      "双链季铵盐"
+    ],
     "category": "清洁剂",
-    "common_products": ["衣物除菌液", "滴露衣物除菌液", "除菌洗衣液", "威露士衣物除菌液"],
+    "common_products": [
+      "衣物除菌液",
+      "滴露衣物除菌液",
+      "除菌洗衣液",
+      "威露士衣物除菌液"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，浓溶液刺激皮肤黏膜，可致化学性灼伤",
     "flammability": "不燃",
@@ -111,14 +179,24 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封阴凉处储存，远离儿童",
-    "green_alternatives": ["高温热水除菌", "阳光紫外线暴晒", "蒸汽熨烫"]
+    "green_alternatives": [
+      "高温热水除菌",
+      "阳光紫外线暴晒",
+      "蒸汽熨烫"
+    ]
   },
   {
     "id": "msds_007",
     "name": "磷酸",
-    "aliases": ["正磷酸"],
+    "aliases": [
+      "正磷酸"
+    ],
     "category": "清洁剂",
-    "common_products": ["厨房油污清洁剂", "威猛先生厨房重油污净", "不锈钢清洁剂"],
+    "common_products": [
+      "厨房油污清洁剂",
+      "威猛先生厨房重油污净",
+      "不锈钢清洁剂"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，浓溶液腐蚀皮肤黏膜，长期接触致皮炎",
     "flammability": "不燃",
@@ -130,14 +208,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处",
     "storage": "密封阴凉储存，远离儿童和碱类",
-    "green_alternatives": ["小苏打+热水", "柠檬酸溶液", "橘皮提取物"]
+    "green_alternatives": [
+      "小苏打+热水",
+      "柠檬酸溶液",
+      "橘皮提取物"
+    ]
   },
   {
     "id": "msds_008",
     "name": "碳酸钠",
-    "aliases": ["纯碱", "苏打", "洗涤碱"],
+    "aliases": [
+      "纯碱",
+      "苏打",
+      "洗涤碱"
+    ],
     "category": "清洁剂",
-    "common_products": ["小苏打洗衣助剂", "大苏打清洁剂", "食用碱面"],
+    "common_products": [
+      "小苏打洗衣助剂",
+      "大苏打清洁剂",
+      "食用碱面"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，浓溶液对皮肤有刺激性",
     "flammability": "不燃",
@@ -149,14 +239,22 @@
     "first_aid_eye": "用清水冲洗 5 分钟以上，不适就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "干燥密封储存，避免受潮结块",
-    "green_alternatives": ["本身即温和成分"]
+    "green_alternatives": [
+      "本身即温和成分"
+    ]
   },
   {
     "id": "msds_009",
     "name": "三聚磷酸钠",
-    "aliases": ["STPP", "磷酸五钠"],
+    "aliases": [
+      "STPP",
+      "磷酸五钠"
+    ],
     "category": "清洁剂",
-    "common_products": ["洗衣粉", "洗衣液助洗剂"],
+    "common_products": [
+      "洗衣粉",
+      "洗衣液助洗剂"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒",
     "flammability": "不燃",
@@ -168,14 +266,24 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "移至通风处",
     "storage": "干燥密封储存",
-    "green_alternatives": ["沸石助洗剂", "柠檬酸钠"]
+    "green_alternatives": [
+      "沸石助洗剂",
+      "柠檬酸钠"
+    ]
   },
   {
     "id": "msds_010",
     "name": "EDTA二钠",
-    "aliases": ["乙二胺四乙酸二钠", "EDTA-2Na"],
+    "aliases": [
+      "乙二胺四乙酸二钠",
+      "EDTA-2Na"
+    ],
     "category": "清洁剂",
-    "common_products": ["洗衣液", "洗洁精", "化妆品稳定剂"],
+    "common_products": [
+      "洗衣液",
+      "洗洁精",
+      "化妆品稳定剂"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，可络合体内金属离子",
     "flammability": "不燃",
@@ -187,14 +295,24 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封干燥储存",
-    "green_alternatives": ["柠檬酸钠", "葡萄糖酸钠"]
+    "green_alternatives": [
+      "柠檬酸钠",
+      "葡萄糖酸钠"
+    ]
   },
   {
     "id": "msds_011",
     "name": "柠檬酸",
-    "aliases": ["枸橼酸", "2-羟基丙烷-1,2,3-三羧酸"],
+    "aliases": [
+      "枸橼酸",
+      "2-羟基丙烷-1,2,3-三羧酸"
+    ],
     "category": "清洁剂",
-    "common_products": ["食品级除垢剂", "电水壶除垢剂", "洗碗机亮碟剂"],
+    "common_products": [
+      "食品级除垢剂",
+      "电水壶除垢剂",
+      "洗碗机亮碟剂"
+    ],
     "hazard_level": "低",
     "toxicity": "极低毒，食品级安全",
     "flammability": "不燃",
@@ -206,14 +324,22 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "移至通风处",
     "storage": "干燥密封储存",
-    "green_alternatives": ["本身即绿色成分"]
+    "green_alternatives": [
+      "本身即绿色成分"
+    ]
   },
   {
     "id": "msds_012",
     "name": "硅酸钠",
-    "aliases": ["水玻璃", "泡花碱"],
+    "aliases": [
+      "水玻璃",
+      "泡花碱"
+    ],
     "category": "清洁剂",
-    "common_products": ["洗衣粉助洗剂", "工业除油剂"],
+    "common_products": [
+      "洗衣粉助洗剂",
+      "工业除油剂"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，碱性溶液刺激皮肤黏膜",
     "flammability": "不燃",
@@ -225,14 +351,25 @@
     "first_aid_eye": "清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封干燥储存，远离儿童",
-    "green_alternatives": ["小苏打溶液"]
+    "green_alternatives": [
+      "小苏打溶液"
+    ]
   },
   {
     "id": "msds_013",
     "name": "乙醇",
-    "aliases": ["酒精", "食用酒精", "无水酒精"],
+    "aliases": [
+      "酒精",
+      "食用酒精",
+      "无水酒精"
+    ],
     "category": "消毒剂",
-    "common_products": ["75%酒精消毒液", "酒精棉片", "免洗手消毒凝胶", "医用酒精"],
+    "common_products": [
+      "75%酒精消毒液",
+      "酒精棉片",
+      "免洗手消毒凝胶",
+      "医用酒精"
+    ],
     "hazard_level": "中",
     "toxicity": "低毒，过量摄入抑制中枢神经；可致醉酒样症状，严重可昏迷",
     "flammability": "极易燃，闪点 13℃，爆炸极限 3.3%-19%",
@@ -244,14 +381,24 @@
     "first_aid_eye": "清水冲洗 5 分钟以上",
     "first_aid_inhalation": "移至通风处，必要时给氧",
     "storage": "密封阴凉避火储存，远离火源、静电、儿童，每次少量取用",
-    "green_alternatives": ["高温蒸汽消毒", "紫外灯消毒"]
+    "green_alternatives": [
+      "高温蒸汽消毒",
+      "紫外灯消毒"
+    ]
   },
   {
     "id": "msds_014",
     "name": "异丙醇",
-    "aliases": ["2-丙醇", "异丙基酒精"],
+    "aliases": [
+      "2-丙醇",
+      "异丙基酒精"
+    ],
     "category": "消毒剂",
-    "common_products": ["消毒湿巾", "电子设备清洁剂", "医用消毒酒精"],
+    "common_products": [
+      "消毒湿巾",
+      "电子设备清洁剂",
+      "医用消毒酒精"
+    ],
     "hazard_level": "中",
     "toxicology_note": "待核实",
     "toxicity": "中等毒性，对中枢神经抑制比乙醇强，可致头痛、眩晕、昏迷",
@@ -264,14 +411,24 @@
     "first_aid_eye": "清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处，必要时给氧就医",
     "storage": "密封阴凉避火储存，远离火源和儿童",
-    "green_alternatives": ["白醋擦拭", "高温蒸汽"]
+    "green_alternatives": [
+      "白醋擦拭",
+      "高温蒸汽"
+    ]
   },
   {
     "id": "msds_015",
     "name": "过氧乙酸",
-    "aliases": ["过乙酸", "PAA"],
+    "aliases": [
+      "过乙酸",
+      "PAA"
+    ],
     "category": "消毒剂",
-    "common_products": ["疫源地消毒剂", "过氧乙酸消毒液", "医院器械消毒"],
+    "common_products": [
+      "疫源地消毒剂",
+      "过氧乙酸消毒液",
+      "医院器械消毒"
+    ],
     "hazard_level": "极高",
     "toxicity": "强氧化性，刺激呼吸道，可致肺水肿",
     "flammability": "易燃易爆，浓度>15%可爆炸性分解",
@@ -283,14 +440,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，必要时给氧就医",
     "storage": "密封避光避热储存，远离火源、还原剂、有机物，少量存放",
-    "green_alternatives": ["高温蒸汽", "紫外消毒", "酒精消毒"]
+    "green_alternatives": [
+      "高温蒸汽",
+      "紫外消毒",
+      "酒精消毒"
+    ]
   },
   {
     "id": "msds_016",
     "name": "对氯间二甲苯酚",
-    "aliases": ["PCMX", "4-氯-3,5-二甲基苯酚"],
+    "aliases": [
+      "PCMX",
+      "4-氯-3,5-二甲基苯酚"
+    ],
     "category": "消毒剂",
-    "common_products": ["滴露消毒液", "威露士消毒液", "滴露香皂", "舒肤佳香皂"],
+    "common_products": [
+      "滴露消毒液",
+      "威露士消毒液",
+      "滴露香皂",
+      "舒肤佳香皂"
+    ],
     "hazard_level": "中",
     "toxicity": "低毒，但高浓度刺激皮肤黏膜",
     "flammability": "可燃",
@@ -302,14 +471,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封阴凉储存，远离儿童",
-    "green_alternatives": ["茶树精油", "酒精消毒", "高温消毒"]
+    "green_alternatives": [
+      "茶树精油",
+      "酒精消毒",
+      "高温消毒"
+    ]
   },
   {
     "id": "msds_017",
     "name": "聚维酮碘",
-    "aliases": ["碘伏", "PVP-I", "聚乙烯吡咯烷酮碘"],
+    "aliases": [
+      "碘伏",
+      "PVP-I",
+      "聚乙烯吡咯烷酮碘"
+    ],
     "category": "消毒剂",
-    "common_products": ["碘伏消毒液", "医用碘伏", "聚维酮碘软膏"],
+    "common_products": [
+      "碘伏消毒液",
+      "医用碘伏",
+      "聚维酮碘软膏"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，对碘过敏者可致过敏",
     "flammability": "不燃",
@@ -321,14 +502,24 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封避光储存，远离儿童",
-    "green_alternatives": ["生理盐水清洁", "酒精消毒"]
+    "green_alternatives": [
+      "生理盐水清洁",
+      "酒精消毒"
+    ]
   },
   {
     "id": "msds_018",
     "name": "戊二醛",
-    "aliases": ["1,5-戊二醛", "胶醛"],
+    "aliases": [
+      "1,5-戊二醛",
+      "胶醛"
+    ],
     "category": "消毒剂",
-    "common_products": ["内窥镜消毒液", "医疗器械高效消毒", "2%碱性戊二醛"],
+    "common_products": [
+      "内窥镜消毒液",
+      "医疗器械高效消毒",
+      "2%碱性戊二醛"
+    ],
     "hazard_level": "高",
     "toxicity": "中等毒性，强烈刺激呼吸道、眼和皮肤，可致职业性哮喘",
     "flammability": "可燃",
@@ -340,14 +531,24 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，必要时给氧就医",
     "storage": "密封避光储存，通风良好，远离儿童和氧化剂",
-    "green_alternatives": ["高温高压灭菌", "过氧化氢等离子"]
+    "green_alternatives": [
+      "高温高压灭菌",
+      "过氧化氢等离子"
+    ]
   },
   {
     "id": "msds_019",
     "name": "过氧化氢",
-    "aliases": ["双氧水", "H2O2"],
+    "aliases": [
+      "双氧水",
+      "H2O2"
+    ],
     "category": "消毒剂",
-    "common_products": ["3%双氧水消毒液", "医用双氧水", "伤口消毒液"],
+    "common_products": [
+      "3%双氧水消毒液",
+      "医用双氧水",
+      "伤口消毒液"
+    ],
     "hazard_level": "中",
     "toxicity": "低毒，浓溶液腐蚀皮肤黏膜，分解产氧可致肠胀气",
     "flammability": "不燃，但强助燃",
@@ -359,14 +560,25 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封避光避热储存，远离儿童、有机物和金属粉末",
-    "green_alternatives": ["本身即较环保", "生理盐水清洁"]
+    "green_alternatives": [
+      "本身即较环保",
+      "生理盐水清洁"
+    ]
   },
   {
     "id": "msds_020",
     "name": "苯扎氯铵",
-    "aliases": ["BAC", "洁尔灭", "烷基二甲基苄基氯化铵"],
+    "aliases": [
+      "BAC",
+      "洁尔灭",
+      "烷基二甲基苄基氯化铵"
+    ],
     "category": "消毒剂",
-    "common_products": ["创可贴消毒剂", "苯扎氯铵消毒液", "隐形眼镜护理液"],
+    "common_products": [
+      "创可贴消毒剂",
+      "苯扎氯铵消毒液",
+      "隐形眼镜护理液"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，浓溶液腐蚀皮肤黏膜，可致中枢神经症状",
     "flammability": "不燃",
@@ -378,14 +590,25 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封阴凉储存，远离儿童",
-    "green_alternatives": ["生理盐水", "酒精消毒"]
+    "green_alternatives": [
+      "生理盐水",
+      "酒精消毒"
+    ]
   },
   {
     "id": "msds_021",
     "name": "高锰酸钾",
-    "aliases": ["PP粉", "灰锰氧", "过锰酸钾"],
+    "aliases": [
+      "PP粉",
+      "灰锰氧",
+      "过锰酸钾"
+    ],
     "category": "消毒剂",
-    "common_products": ["高锰酸钾外用片", "PP粉坐浴", "鱼缸消毒"],
+    "common_products": [
+      "高锰酸钾外用片",
+      "PP粉坐浴",
+      "鱼缸消毒"
+    ],
     "hazard_level": "高",
     "toxicity": "强氧化性，腐蚀消化道和皮肤，可致肝损伤",
     "flammability": "强助燃，遇有机物易燃爆",
@@ -397,14 +620,24 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处，必要时给氧就医",
     "storage": "密封避光储存，远离有机物、易燃物、儿童",
-    "green_alternatives": ["盐水坐浴", "碘伏消毒"]
+    "green_alternatives": [
+      "盐水坐浴",
+      "碘伏消毒"
+    ]
   },
   {
     "id": "msds_022",
     "name": "二氧化氯",
-    "aliases": ["ClO2", "亚氯酸酐"],
+    "aliases": [
+      "ClO2",
+      "亚氯酸酐"
+    ],
     "category": "消毒剂",
-    "common_products": ["二氧化氯泡腾片", "空气消毒剂", "饮水消毒片"],
+    "common_products": [
+      "二氧化氯泡腾片",
+      "空气消毒剂",
+      "饮水消毒片"
+    ],
     "hazard_level": "高",
     "toxicity": "强氧化性，刺激呼吸道，可致肺水肿",
     "flammability": "气体浓度>10%易爆炸",
@@ -416,14 +649,24 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，给氧就医",
     "storage": "避光避热干燥储存，远离儿童、酸和还原剂，现用现配",
-    "green_alternatives": ["紫外消毒", "高温蒸汽"]
+    "green_alternatives": [
+      "紫外消毒",
+      "高温蒸汽"
+    ]
   },
   {
     "id": "msds_023",
     "name": "敌敌畏",
-    "aliases": ["DDVP", "2,2-二氯乙烯基二甲基磷酸酯"],
+    "aliases": [
+      "DDVP",
+      "2,2-二氯乙烯基二甲基磷酸酯"
+    ],
     "category": "农药",
-    "common_products": ["敌敌畏乳油", "DDVP杀虫剂", "家庭灭蚊药（已禁室内）"],
+    "common_products": [
+      "敌敌畏乳油",
+      "DDVP杀虫剂",
+      "家庭灭蚊药（已禁室内）"
+    ],
     "hazard_level": "极高",
     "toxicity": "剧毒，抑制胆碱酯酶，致毒蕈碱样和烟碱样症状，可致死",
     "flammability": "易燃（乳油溶剂）",
@@ -435,14 +678,26 @@
     "first_aid_eye": "用清水冲洗 15 分钟并立即就医",
     "first_aid_inhalation": "立即移至空气新鲜处，给氧，必要时人工呼吸，紧急就医",
     "storage": "严禁家庭存放！应改为物理防虫；如确需，须上锁远离儿童食品",
-    "green_alternatives": ["物理蚊帐", "电蚊拍", "拟除虫菊酯类低毒药", "黏虫板"]
+    "green_alternatives": [
+      "物理蚊帐",
+      "电蚊拍",
+      "拟除虫菊酯类低毒药",
+      "黏虫板"
+    ]
   },
   {
     "id": "msds_024",
     "name": "百草枯",
-    "aliases": ["PQ", "克无踪", "对草快"],
+    "aliases": [
+      "PQ",
+      "克无踪",
+      "对草快"
+    ],
     "category": "农药",
-    "common_products": ["百草枯水剂（国内2020年已禁售）", "克无踪"],
+    "common_products": [
+      "百草枯水剂（国内2020年已禁售）",
+      "克无踪"
+    ],
     "hazard_level": "极高",
     "toxicity": "剧毒，致死量约 20-40mg/kg；致不可逆肺纤维化，多器官衰竭，无特效解毒剂，死亡率极高",
     "flammability": "不燃",
@@ -454,14 +709,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟以上并立即就医",
     "first_aid_inhalation": "立即移至空气新鲜处，紧急就医",
     "storage": "国内已禁售禁用，家中如有存货立即上交农技部门，严禁继续存放",
-    "green_alternatives": ["草甘膦（仍需谨慎）", "机械除草", "覆盖除草", "醋+盐除草"]
+    "green_alternatives": [
+      "草甘膦（仍需谨慎）",
+      "机械除草",
+      "覆盖除草",
+      "醋+盐除草"
+    ]
   },
   {
     "id": "msds_025",
     "name": "草甘膦",
-    "aliases": ["农达", "Roundup", "N-(膦羧甲基)甘氨酸"],
+    "aliases": [
+      "农达",
+      "Roundup",
+      "N-(膦羧甲基)甘氨酸"
+    ],
     "category": "农药",
-    "common_products": ["农达除草剂", "草甘膦异丙胺盐水剂"],
+    "common_products": [
+      "农达除草剂",
+      "草甘膦异丙胺盐水剂"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，WHO 列为可能致癌物（2A），刺激皮肤眼黏膜",
     "flammability": "不燃",
@@ -473,14 +740,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处",
     "storage": "密封阴凉储存，远离儿童、食品、宠物",
-    "green_alternatives": ["白醋+盐+洗洁精除草", "沸水浇灌", "覆盖物抑草"]
+    "green_alternatives": [
+      "白醋+盐+洗洁精除草",
+      "沸水浇灌",
+      "覆盖物抑草"
+    ]
   },
   {
     "id": "msds_026",
     "name": "溴氰菊酯",
-    "aliases": ["敌杀死", "凯素灵", "Deltamethrin"],
+    "aliases": [
+      "敌杀死",
+      "凯素灵",
+      "Deltamethrin"
+    ],
     "category": "农药",
-    "common_products": ["敌杀死乳油", "蚊香（部分含）", "电热蚊香液"],
+    "common_products": [
+      "敌杀死乳油",
+      "蚊香（部分含）",
+      "电热蚊香液"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，影响神经钠通道，可致震颤、抽搐；毒性相对较低",
     "flammability": "乳油溶剂可燃",
@@ -492,14 +771,27 @@
     "first_aid_eye": "用清水冲洗 15 分钟",
     "first_aid_inhalation": "移至空气新鲜处",
     "storage": "密封阴凉储存，远离儿童、食品、宠物、鱼缸",
-    "green_alternatives": ["蚊帐", "电蚊拍", "薄荷油驱蚊", "纱窗"]
+    "green_alternatives": [
+      "蚊帐",
+      "电蚊拍",
+      "薄荷油驱蚊",
+      "纱窗"
+    ]
   },
   {
     "id": "msds_027",
     "name": "氯氰菊酯",
-    "aliases": ["兴棉宝", "灭百可", "Cypermethrin"],
+    "aliases": [
+      "兴棉宝",
+      "灭百可",
+      "Cypermethrin"
+    ],
     "category": "农药",
-    "common_products": ["杀虫气雾剂", "蚊香", "灭蟑药"],
+    "common_products": [
+      "杀虫气雾剂",
+      "蚊香",
+      "灭蟑药"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，影响神经系统，可致感觉异常、头痛",
     "flammability": "可燃（溶剂）",
@@ -511,14 +803,25 @@
     "first_aid_eye": "用清水冲洗 15 分钟",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封储存，远离儿童、食品、鱼缸",
-    "green_alternatives": ["蚊帐", "电蚊拍", "硅藻土灭虫"]
+    "green_alternatives": [
+      "蚊帐",
+      "电蚊拍",
+      "硅藻土灭虫"
+    ]
   },
   {
     "id": "msds_028",
     "name": "敌百虫",
-    "aliases": ["Trichlorfon", "三氯松"],
+    "aliases": [
+      "Trichlorfon",
+      "三氯松"
+    ],
     "category": "农药",
-    "common_products": ["敌百虫原粉", "兽用驱虫药", "家庭杀虫剂"],
+    "common_products": [
+      "敌百虫原粉",
+      "兽用驱虫药",
+      "家庭杀虫剂"
+    ],
     "hazard_level": "高",
     "toxicity": "高毒，有机磷抑制胆碱酯酶，致多诞、肌颤、抽搐",
     "flammability": "可燃",
@@ -530,14 +833,24 @@
     "first_aid_eye": "用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处，给氧就医",
     "storage": "密封阴凉储存，远离儿童、食品、碱类",
-    "green_alternatives": ["拟除虫菊酯低毒药", "生物防治", "物理灭虫"]
+    "green_alternatives": [
+      "拟除虫菊酯低毒药",
+      "生物防治",
+      "物理灭虫"
+    ]
   },
   {
     "id": "msds_029",
     "name": "乐果",
-    "aliases": ["Dimethoate", "乐戈"],
+    "aliases": [
+      "Dimethoate",
+      "乐戈"
+    ],
     "category": "农药",
-    "common_products": ["乐果乳油", "40%乐果乳油"],
+    "common_products": [
+      "乐果乳油",
+      "40%乐果乳油"
+    ],
     "hazard_level": "高",
     "toxicity": "高毒，有机磷抑制胆碱酯酶，致神经中毒",
     "flammability": "可燃",
@@ -549,14 +862,25 @@
     "first_aid_eye": "用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处，给氧就医",
     "storage": "密封阴凉储存，远离儿童、食品、宠物",
-    "green_alternatives": ["生物农药", "植物源农药", "物理诱捕"]
+    "green_alternatives": [
+      "生物农药",
+      "植物源农药",
+      "物理诱捕"
+    ]
   },
   {
     "id": "msds_030",
     "name": "毒死蜱",
-    "aliases": ["Chlorpyrifos", "乐斯本", "氯蜱硫磷"],
+    "aliases": [
+      "Chlorpyrifos",
+      "乐斯本",
+      "氯蜱硫磷"
+    ],
     "category": "农药",
-    "common_products": ["毒死蜱乳油", "乐斯本杀虫剂"],
+    "common_products": [
+      "毒死蜱乳油",
+      "乐斯本杀虫剂"
+    ],
     "hazard_level": "高",
     "toxicity": "高毒，有机磷抑制胆碱酯酶；儿童神经发育毒性，国内已限禁",
     "flammability": "可燃",
@@ -568,14 +892,26 @@
     "first_aid_eye": "用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处就医",
     "storage": "国内已限禁蔬菜使用；密封储存，远离儿童食品",
-    "green_alternatives": ["生物农药Bt", "苏云金杆菌", "物理防治"]
+    "green_alternatives": [
+      "生物农药Bt",
+      "苏云金杆菌",
+      "物理防治"
+    ]
   },
   {
     "id": "msds_031",
     "name": "阿维菌素",
-    "aliases": ["Abamectin", "齐墩螨素", "爱比菌素"],
+    "aliases": [
+      "Abamectin",
+      "齐墩螨素",
+      "爱比菌素"
+    ],
     "category": "农药",
-    "common_products": ["阿维菌素乳油", "螨虫清", "宠物驱虫药（注意剂量）"],
+    "common_products": [
+      "阿维菌素乳油",
+      "螨虫清",
+      "宠物驱虫药（注意剂量）"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，GABA 受体激动剂，可致神经症状",
     "flammability": "可燃",
@@ -587,14 +923,25 @@
     "first_aid_eye": "用清水冲洗 15 分钟",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封阴凉储存，远离儿童、食品、鱼缸、蜜蜂",
-    "green_alternatives": ["印楝油", "植物源农药"]
+    "green_alternatives": [
+      "印楝油",
+      "植物源农药"
+    ]
   },
   {
     "id": "msds_032",
     "name": "吡虫啉",
-    "aliases": ["Imidacloprid", "咪蚜胺", "高巧"],
+    "aliases": [
+      "Imidacloprid",
+      "咪蚜胺",
+      "高巧"
+    ],
     "category": "农药",
-    "common_products": ["吡虫啉可湿性粉", "家庭花肥杀虫剂", "宠物跳蚤药"],
+    "common_products": [
+      "吡虫啉可湿性粉",
+      "家庭花肥杀虫剂",
+      "宠物跳蚤药"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，烟碱受体激动剂，影响神经传导",
     "flammability": "可燃",
@@ -606,14 +953,29 @@
     "first_aid_eye": "用清水冲洗 15 分钟",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封储存，远离儿童、食品、蜜蜂养殖区",
-    "green_alternatives": ["肥皂水喷杀", "印楝油", "黄色黏虫板"]
+    "green_alternatives": [
+      "肥皂水喷杀",
+      "印楝油",
+      "黄色黏虫板"
+    ]
   },
   {
     "id": "msds_033",
     "name": "对乙酰氨基酚",
-    "aliases": ["扑热息痛", "Paracetamol", "APAP"],
+    "aliases": [
+      "扑热息痛",
+      "Paracetamol",
+      "APAP"
+    ],
     "category": "药品",
-    "common_products": ["泰诺", "必理通", "感康", "999感冒灵", "白加黑", "小儿美林（混淆）"],
+    "common_products": [
+      "泰诺",
+      "必理通",
+      "感康",
+      "999感冒灵",
+      "白加黑",
+      "小儿美林（混淆）"
+    ],
     "hazard_level": "中",
     "toxicity": "过量（成人>7.5g）致肝坏死，可致命；与酒精叠加更危险；儿童剂量减半",
     "flammability": "不燃",
@@ -625,14 +987,25 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童（防误服过量）",
-    "green_alternatives": ["物理降温", "多饮水休息"]
+    "green_alternatives": [
+      "物理降温",
+      "多饮水休息"
+    ]
   },
   {
     "id": "msds_034",
     "name": "布洛芬",
-    "aliases": ["Ibuprofen", "异丁苯丙酸"],
+    "aliases": [
+      "Ibuprofen",
+      "异丁苯丙酸"
+    ],
     "category": "药品",
-    "common_products": ["美林", "芬必得", "布洛芬缓释胶囊", "迪尔诺"],
+    "common_products": [
+      "美林",
+      "芬必得",
+      "布洛芬缓释胶囊",
+      "迪尔诺"
+    ],
     "hazard_level": "中",
     "toxicity": "过量致胃肠道出血、肾损伤、中枢症状；与酒精叠加加重胃损伤",
     "flammability": "不燃",
@@ -644,14 +1017,25 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["物理降温", "对乙酰氨基酚替代（无哮喘史）"]
+    "green_alternatives": [
+      "物理降温",
+      "对乙酰氨基酚替代（无哮喘史）"
+    ]
   },
   {
     "id": "msds_035",
     "name": "阿司匹林",
-    "aliases": ["Aspirin", "乙酰水杨酸", "ASA"],
+    "aliases": [
+      "Aspirin",
+      "乙酰水杨酸",
+      "ASA"
+    ],
     "category": "药品",
-    "common_products": ["阿司匹林肠溶片", "拜阿司匹灵", "巴米尔"],
+    "common_products": [
+      "阿司匹林肠溶片",
+      "拜阿司匹灵",
+      "巴米尔"
+    ],
     "hazard_level": "中",
     "toxicity": "过量致耳鸣、过度换气、代谢性酸中毒；儿童病毒感染时禁用（瑞氏综合征风险）",
     "flammability": "不燃",
@@ -663,14 +1047,24 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童；12岁以下儿童病毒感染期禁用",
-    "green_alternatives": ["对乙酰氨基酚替代"]
+    "green_alternatives": [
+      "对乙酰氨基酚替代"
+    ]
   },
   {
     "id": "msds_036",
     "name": "地西泮",
-    "aliases": ["Diazepam", "安定", "苯甲二氮䓬"],
+    "aliases": [
+      "Diazepam",
+      "安定",
+      "苯甲二氮䓬"
+    ],
     "category": "药品",
-    "common_products": ["安定片", "地西泮注射液", "Valium"],
+    "common_products": [
+      "安定片",
+      "地西泮注射液",
+      "Valium"
+    ],
     "hazard_level": "高",
     "toxicity": "二类精神药品，过量致嗜睡、呼吸抑制、低血压，与酒精合用致命",
     "flammability": "不燃",
@@ -682,14 +1076,25 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "处方药，避光密封上锁储存，严禁与酒精同用",
-    "green_alternatives": ["认知行为疗法", "睡眠卫生改善", "褪黑素（医师指导）"]
+    "green_alternatives": [
+      "认知行为疗法",
+      "睡眠卫生改善",
+      "褪黑素（医师指导）"
+    ]
   },
   {
     "id": "msds_037",
     "name": "氯雷他定",
-    "aliases": ["Loratadine", "克敏能"],
+    "aliases": [
+      "Loratadine",
+      "克敏能"
+    ],
     "category": "药品",
-    "common_products": ["开瑞坦", "氯雷他定片", "糖浆剂"],
+    "common_products": [
+      "开瑞坦",
+      "氯雷他定片",
+      "糖浆剂"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，过量可致嗜睡、心动过速",
     "flammability": "不燃",
@@ -701,14 +1106,24 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["鼻腔冲洗", "避免过敏原"]
+    "green_alternatives": [
+      "鼻腔冲洗",
+      "避免过敏原"
+    ]
   },
   {
     "id": "msds_038",
     "name": "西替利嗪",
-    "aliases": ["Cetirizine", "二盐酸西替利嗪"],
+    "aliases": [
+      "Cetirizine",
+      "二盐酸西替利嗪"
+    ],
     "category": "药品",
-    "common_products": ["仙特明", "西替利嗪滴剂", "比特力"],
+    "common_products": [
+      "仙特明",
+      "西替利嗪滴剂",
+      "比特力"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，过量可致嗜睡",
     "flammability": "不燃",
@@ -720,14 +1135,25 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["氯雷他定", "避免过敏原"]
+    "green_alternatives": [
+      "氯雷他定",
+      "避免过敏原"
+    ]
   },
   {
     "id": "msds_039",
     "name": "奥美拉唑",
-    "aliases": ["Omeprazole", "洛赛克", "奥克"],
+    "aliases": [
+      "Omeprazole",
+      "洛赛克",
+      "奥克"
+    ],
     "category": "药品",
-    "common_products": ["洛赛克", "奥美拉唑肠溶胶囊", "奥克"],
+    "common_products": [
+      "洛赛克",
+      "奥美拉唑肠溶胶囊",
+      "奥克"
+    ],
     "hazard_level": "低",
     "toxicity": "低毒，长期使用影响骨密度和镁吸收",
     "flammability": "不燃",
@@ -739,14 +1165,26 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["调整饮食", "餐后散步", "避免睡前进食"]
+    "green_alternatives": [
+      "调整饮食",
+      "餐后散步",
+      "避免睡前进食"
+    ]
   },
   {
     "id": "msds_040",
     "name": "二甲双胍",
-    "aliases": ["Metformin", "格华止", "二甲双胍盐酸盐"],
+    "aliases": [
+      "Metformin",
+      "格华止",
+      "二甲双胍盐酸盐"
+    ],
     "category": "药品",
-    "common_products": ["格华止", "二甲双胍片", "美迪康"],
+    "common_products": [
+      "格华止",
+      "二甲双胍片",
+      "美迪康"
+    ],
     "hazard_level": "中",
     "toxicity": "过量可致乳酸酸中毒（高死亡率），尤其肝肾不全者",
     "flammability": "不燃",
@@ -758,14 +1196,26 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["饮食控制", "运动", "减重"]
+    "green_alternatives": [
+      "饮食控制",
+      "运动",
+      "减重"
+    ]
   },
   {
     "id": "msds_041",
     "name": "硝苯地平",
-    "aliases": ["Nifedipine", "心痛定", "拜新同"],
+    "aliases": [
+      "Nifedipine",
+      "心痛定",
+      "拜新同"
+    ],
     "category": "药品",
-    "common_products": ["拜新同", "硝苯地平控释片", "心痛定"],
+    "common_products": [
+      "拜新同",
+      "硝苯地平控释片",
+      "心痛定"
+    ],
     "hazard_level": "中",
     "toxicity": "过量致严重低血压、心动过速、意识障碍",
     "flammability": "不燃",
@@ -777,14 +1227,25 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童",
-    "green_alternatives": ["低盐饮食", "运动", "减重"]
+    "green_alternatives": [
+      "低盐饮食",
+      "运动",
+      "减重"
+    ]
   },
   {
     "id": "msds_042",
     "name": "阿莫西林",
-    "aliases": ["Amoxicillin", "羟氨苄青霉素"],
+    "aliases": [
+      "Amoxicillin",
+      "羟氨苄青霉素"
+    ],
     "category": "药品",
-    "common_products": ["阿莫仙", "阿莫西林胶囊", "再林颗粒"],
+    "common_products": [
+      "阿莫仙",
+      "阿莫西林胶囊",
+      "再林颗粒"
+    ],
     "hazard_level": "中",
     "toxicity": "过量致胃肠不适，主要风险是青霉素过敏（过敏性休克）",
     "flammability": "不燃",
@@ -796,14 +1257,23 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童；用前必须皮试",
-    "green_alternatives": ["对症休息", "充分饮水"]
+    "green_alternatives": [
+      "对症休息",
+      "充分饮水"
+    ]
   },
   {
     "id": "msds_043",
     "name": "多潘立酮",
-    "aliases": ["Domperidone", "吗丁啉"],
+    "aliases": [
+      "Domperidone",
+      "吗丁啉"
+    ],
     "category": "药品",
-    "common_products": ["吗丁啉", "多潘立酮片"],
+    "common_products": [
+      "吗丁啉",
+      "多潘立酮片"
+    ],
     "hazard_level": "中",
     "toxicity": "过量可致心律失常（QT延长），尤其静脉或大剂量",
     "flammability": "不燃",
@@ -815,14 +1285,23 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童；心脏病者慎用",
-    "green_alternatives": ["少量多餐", "餐后散步"]
+    "green_alternatives": [
+      "少量多餐",
+      "餐后散步"
+    ]
   },
   {
     "id": "msds_044",
     "name": "复方甘草片",
-    "aliases": ["复方甘草合剂", "棕色合剂"],
+    "aliases": [
+      "复方甘草合剂",
+      "棕色合剂"
+    ],
     "category": "药品",
-    "common_products": ["复方甘草片", "复方甘草口服溶液"],
+    "common_products": [
+      "复方甘草片",
+      "复方甘草口服溶液"
+    ],
     "hazard_level": "中",
     "toxicity": "含阿片粉/吗啡，长期使用可成瘾；含甘草浸膏致水钠潴留、低钾",
     "flammability": "不燃",
@@ -834,14 +1313,27 @@
     "first_aid_eye": "清水冲洗",
     "first_aid_inhalation": "无吸入风险",
     "storage": "避光密封储存，远离儿童；不宜长期使用",
-    "green_alternatives": ["蜂蜜温水", "蒸汽吸入", "多饮水"]
+    "green_alternatives": [
+      "蜂蜜温水",
+      "蒸汽吸入",
+      "多饮水"
+    ]
   },
   {
     "id": "msds_045",
     "name": "甲醛",
-    "aliases": ["Formaldehyde", "福尔马林（37%水溶液）", "蚁醛"],
+    "aliases": [
+      "Formaldehyde",
+      "福尔马林（37%水溶液）",
+      "蚁醛"
+    ],
     "category": "化妆品",
-    "common_products": ["新家具释放", "装修胶水", "劣质服装", "福尔马林防腐剂"],
+    "common_products": [
+      "新家具释放",
+      "装修胶水",
+      "劣质服装",
+      "福尔马林防腐剂"
+    ],
     "hazard_level": "极高",
     "toxicity": "IARC 1类致癌物（鼻咽癌、白血病），刺激呼吸道，致哮喘",
     "flammability": "易燃（37%溶液闪点约 64℃）",
@@ -853,14 +1345,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，给氧就医",
     "storage": "密封避光储存，远离儿童；新装修须充分通风3-6个月",
-    "green_alternatives": ["E0/E1级环保板材", "通风+绿植", "活性炭吸附"]
+    "green_alternatives": [
+      "E0/E1级环保板材",
+      "通风+绿植",
+      "活性炭吸附"
+    ]
   },
   {
     "id": "msds_046",
     "name": "苯",
-    "aliases": ["Benzene", "纯苯", "苯蒸汽"],
+    "aliases": [
+      "Benzene",
+      "纯苯",
+      "苯蒸汽"
+    ],
     "category": "化妆品",
-    "common_products": ["劣质油漆稀料", "工业胶水", "部分玩具溶剂"],
+    "common_products": [
+      "劣质油漆稀料",
+      "工业胶水",
+      "部分玩具溶剂"
+    ],
     "hazard_level": "极高",
     "toxicity": "IARC 1类致癌物（白血病），急性吸入致中枢抑制、心律失常",
     "flammability": "极易燃，闪点 -11℃",
@@ -872,14 +1376,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，必要时人工呼吸就医",
     "storage": "严禁家庭使用！必须使用时需专业防护储存",
-    "green_alternatives": ["水溶性涂料", "无苯稀料", "避免劣质产品"]
+    "green_alternatives": [
+      "水溶性涂料",
+      "无苯稀料",
+      "避免劣质产品"
+    ]
   },
   {
     "id": "msds_047",
     "name": "氨水",
-    "aliases": ["Ammonia water", "氢氧化铵", "氨溶液"],
+    "aliases": [
+      "Ammonia water",
+      "氢氧化铵",
+      "氨溶液"
+    ],
     "category": "清洁剂",
-    "common_products": ["玻璃清洁剂", "无痕清洁剂", "威猛先生玻璃水"],
+    "common_products": [
+      "玻璃清洁剂",
+      "无痕清洁剂",
+      "威猛先生玻璃水"
+    ],
     "hazard_level": "高",
     "toxicity": "强刺激性，吸入致呼吸道痉挛和肺水肿，刺激眼黏膜",
     "flammability": "不燃，但高浓度可助燃",
@@ -891,14 +1407,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处，给氧就医",
     "storage": "密封阴凉储存，远离儿童和酸、漂白剂",
-    "green_alternatives": ["白醋+水", "报纸擦拭", "小苏打水"]
+    "green_alternatives": [
+      "白醋+水",
+      "报纸擦拭",
+      "小苏打水"
+    ]
   },
   {
     "id": "msds_048",
     "name": "甲苯",
-    "aliases": ["Toluene", "甲苯溶剂"],
+    "aliases": [
+      "Toluene",
+      "甲苯溶剂"
+    ],
     "category": "化妆品",
-    "common_products": ["油漆稀释剂", "指甲油", "胶水溶剂", "马克笔"],
+    "common_products": [
+      "油漆稀释剂",
+      "指甲油",
+      "胶水溶剂",
+      "马克笔"
+    ],
     "hazard_level": "高",
     "toxicity": "中等毒性，吸入致中枢抑制，长期暴露影响神经和生殖",
     "flammability": "极易燃，闪点 4℃",
@@ -910,14 +1438,25 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处就医",
     "storage": "密封阴凉避火储存，远离儿童、火源",
-    "green_alternatives": ["水性指甲油", "水基胶水", "无毒马克笔"]
+    "green_alternatives": [
+      "水性指甲油",
+      "水基胶水",
+      "无毒马克笔"
+    ]
   },
   {
     "id": "msds_049",
     "name": "二甲苯",
-    "aliases": ["Xylene", "混合二甲苯"],
+    "aliases": [
+      "Xylene",
+      "混合二甲苯"
+    ],
     "category": "化妆品",
-    "common_products": ["涂料稀释剂", "油漆溶剂", "清洗剂"],
+    "common_products": [
+      "涂料稀释剂",
+      "油漆溶剂",
+      "清洗剂"
+    ],
     "hazard_level": "高",
     "toxicity": "中等毒性，刺激呼吸道，致头痛、眩晕、共济失调",
     "flammability": "易燃，闪点 17-25℃",
@@ -929,14 +1468,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处就医",
     "storage": "密封阴凉避火储存，远离儿童、火源",
-    "green_alternatives": ["水性涂料", "低VOC溶剂"]
+    "green_alternatives": [
+      "水性涂料",
+      "低VOC溶剂"
+    ]
   },
   {
     "id": "msds_050",
     "name": "丙酮",
-    "aliases": ["Acetone", "二甲酮", "2-丙酮"],
+    "aliases": [
+      "Acetone",
+      "二甲酮",
+      "2-丙酮"
+    ],
     "category": "化妆品",
-    "common_products": ["洗甲水", "卸甲巾", "脱漆剂", "502胶解胶剂"],
+    "common_products": [
+      "洗甲水",
+      "卸甲巾",
+      "脱漆剂",
+      "502胶解胶剂"
+    ],
     "hazard_level": "中",
     "toxicity": "低毒，吸入致头痛眩晕，高浓度致中枢抑制",
     "flammability": "极易燃，闪点 -20℃",
@@ -948,14 +1499,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封阴凉避火储存，远离火源、儿童",
-    "green_alternatives": ["水性洗甲水", "温水浸泡"]
+    "green_alternatives": [
+      "水性洗甲水",
+      "温水浸泡"
+    ]
   },
   {
     "id": "msds_051",
     "name": "邻苯二甲酸酯",
-    "aliases": ["Phthalates", "酞酸酯", "塑化剂"],
+    "aliases": [
+      "Phthalates",
+      "酞酸酯",
+      "塑化剂"
+    ],
     "category": "化妆品",
-    "common_products": ["劣质香水", "指甲油", "PVC塑料制品", "儿童玩具"],
+    "common_products": [
+      "劣质香水",
+      "指甲油",
+      "PVC塑料制品",
+      "儿童玩具"
+    ],
     "hazard_level": "高",
     "toxicity": "内分泌干扰物，致男性生殖发育异常，可能致肝肿瘤；儿童敏感",
     "flammability": "可燃",
@@ -967,14 +1530,28 @@
     "first_aid_eye": "用清水冲洗",
     "first_aid_inhalation": "移至通风处",
     "storage": "避免购买含此类成分产品；存储于原装密封容器",
-    "green_alternatives": ["无塑化剂产品", "玻璃/陶瓷容器", "标注无邻苯二甲酸酯的玩具"]
+    "green_alternatives": [
+      "无塑化剂产品",
+      "玻璃/陶瓷容器",
+      "标注无邻苯二甲酸酯的玩具"
+    ]
   },
   {
     "id": "msds_052",
     "name": "一氧化碳",
-    "aliases": ["Carbon monoxide", "CO", "煤气"],
+    "aliases": [
+      "Carbon monoxide",
+      "CO",
+      "煤气"
+    ],
     "category": "其他",
-    "common_products": ["燃气热水器", "煤炉", "炭火", "汽车尾气", "煤气管道泄漏"],
+    "common_products": [
+      "燃气热水器",
+      "煤炉",
+      "炭火",
+      "汽车尾气",
+      "煤气管道泄漏"
+    ],
     "hazard_level": "极高",
     "toxicity": "剧毒，与血红蛋白结合力是氧气240倍，致缺氧、昏迷、死亡",
     "flammability": "易燃易爆，爆炸极限 12.5%-74%",
@@ -986,14 +1563,26 @@
     "first_aid_eye": "无",
     "first_aid_inhalation": "立即移至空气新鲜处，保持呼吸道通畅，立即吸氧或高压氧，紧急呼救120",
     "storage": "预防为主：安装一氧化碳报警器，燃气设备定期检修，保持通风",
-    "green_alternatives": ["电热水器", "电暖设备", "安装CO报警器"]
+    "green_alternatives": [
+      "电热水器",
+      "电暖设备",
+      "安装CO报警器"
+    ]
   },
   {
     "id": "msds_053",
     "name": "电池酸液",
-    "aliases": ["Battery acid", "蓄电池酸液", "硫酸"],
+    "aliases": [
+      "Battery acid",
+      "蓄电池酸液",
+      "硫酸"
+    ],
     "category": "其他",
-    "common_products": ["汽车蓄电池", "电动车铅酸电池", "UPS电源电池"],
+    "common_products": [
+      "汽车蓄电池",
+      "电动车铅酸电池",
+      "UPS电源电池"
+    ],
     "hazard_level": "极高",
     "toxicity": "强腐蚀，致严重化学灼伤；与金属反应放出氢气有爆炸风险",
     "flammability": "不燃，但可助燃",
@@ -1005,14 +1594,25 @@
     "first_aid_eye": "立即用清水冲洗 30 分钟并立即就医",
     "first_aid_inhalation": "移至空气新鲜处就医",
     "storage": "电池直立存放，远离儿童，避免破损泄漏；废旧电池应回收处理",
-    "green_alternatives": ["锂电池产品", "回收处理废旧电池"]
+    "green_alternatives": [
+      "锂电池产品",
+      "回收处理废旧电池"
+    ]
   },
   {
     "id": "msds_054",
     "name": "乙二醇",
-    "aliases": ["Ethylene glycol", "EG", "甘醇"],
+    "aliases": [
+      "Ethylene glycol",
+      "EG",
+      "甘醇"
+    ],
     "category": "其他",
-    "common_products": ["汽车防冻液", "汽车冷却液", "刹车液"],
+    "common_products": [
+      "汽车防冻液",
+      "汽车冷却液",
+      "刹车液"
+    ],
     "hazard_level": "高",
     "toxicity": "中等毒性，代谢为草酸致肾衰竭；甜味易致儿童误食",
     "flammability": "可燃，闪点 111℃",
@@ -1024,14 +1624,26 @@
     "first_aid_eye": "用清水冲洗 15 分钟",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封储存，远离儿童（甜味危险）；用后回收处理",
-    "green_alternatives": ["丙二醇防冻液（低毒）", "生物基防冻液"]
+    "green_alternatives": [
+      "丙二醇防冻液（低毒）",
+      "生物基防冻液"
+    ]
   },
   {
     "id": "msds_055",
     "name": "甲醇",
-    "aliases": ["Methanol", "木醇", "工业酒精"],
+    "aliases": [
+      "Methanol",
+      "木醇",
+      "工业酒精"
+    ],
     "category": "其他",
-    "common_products": ["工业酒精", "假酒", "汽车玻璃水", "化油器清洗剂"],
+    "common_products": [
+      "工业酒精",
+      "假酒",
+      "汽车玻璃水",
+      "化油器清洗剂"
+    ],
     "hazard_level": "极高",
     "toxicity": "剧毒，代谢为甲酸致失明、代谢性酸中毒、死亡；致死量约30ml",
     "flammability": "极易燃，闪点 11℃",
@@ -1043,14 +1655,26 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并立即就医",
     "first_aid_inhalation": "立即移至空气新鲜处就医",
     "storage": "严禁与食用酒精混存；密封避火储存，远离儿童食品",
-    "green_alternatives": ["食用乙醇", "丙二醇"]
+    "green_alternatives": [
+      "食用乙醇",
+      "丙二醇"
+    ]
   },
   {
     "id": "msds_056",
     "name": "汞",
-    "aliases": ["Mercury", "水银", "元素汞"],
+    "aliases": [
+      "Mercury",
+      "水银",
+      "元素汞"
+    ],
     "category": "其他",
-    "common_products": ["传统体温计", "血压计", "荧光灯管", "节能灯"],
+    "common_products": [
+      "传统体温计",
+      "血压计",
+      "荧光灯管",
+      "节能灯"
+    ],
     "hazard_level": "极高",
     "toxicity": "汞蒸气剧毒，损害神经、肾；甲基汞致水俣病",
     "flammability": "不燃",
@@ -1062,14 +1686,27 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "立即移至空气新鲜处就医",
     "storage": "已禁用体温计含汞；如破裂立即开窗通风，用硫粉覆盖收集，联系专业处理",
-    "green_alternatives": ["电子体温计", "电子血压计", "LED灯具"]
+    "green_alternatives": [
+      "电子体温计",
+      "电子血压计",
+      "LED灯具"
+    ]
   },
   {
     "id": "msds_057",
     "name": "樟脑",
-    "aliases": ["Camphor", "莰酮-2", "合成樟脑"],
+    "aliases": [
+      "Camphor",
+      "莰酮-2",
+      "合成樟脑"
+    ],
     "category": "其他",
-    "common_products": ["樟脑丸", "防蛀剂", "防霉球", "清凉油"],
+    "common_products": [
+      "樟脑丸",
+      "防蛀剂",
+      "防霉球",
+      "清凉油"
+    ],
     "hazard_level": "中",
     "toxicity": "中等毒性，致中枢兴奋后抑制；G6PD缺乏者和婴儿风险高",
     "flammability": "易燃，闪点 64℃",
@@ -1081,14 +1718,28 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至通风处",
     "storage": "密封储存，远离儿童、婴儿和食品；婴儿禁用",
-    "green_alternatives": ["雪松木块", " lavender香包", "真空收纳"]
+    "green_alternatives": [
+      "雪松木块",
+      " lavender香包",
+      "真空收纳"
+    ]
   },
   {
     "id": "msds_058",
     "name": "铅",
-    "aliases": ["Lead", "金属铅", "Pb"],
+    "aliases": [
+      "Lead",
+      "金属铅",
+      "Pb"
+    ],
     "category": "其他",
-    "common_products": ["老式含铅油漆", "含铅颜料", "老水管", "蓄电池", "某些玩具"],
+    "common_products": [
+      "老式含铅油漆",
+      "含铅颜料",
+      "老水管",
+      "蓄电池",
+      "某些玩具"
+    ],
     "hazard_level": "极高",
     "toxicity": "慢性神经毒性，影响儿童智力发育；损害造血、肾脏、生殖系统",
     "flammability": "不燃（粉末可燃）",
@@ -1100,6 +1751,4400 @@
     "first_aid_eye": "立即用清水冲洗 15 分钟并就医",
     "first_aid_inhalation": "移至空气新鲜处就医",
     "storage": "远离儿童，避免使用含铅产品；老房翻新需专业检测",
-    "green_alternatives": ["无铅油漆", "无铅颜料", "不锈钢水管"]
+    "green_alternatives": [
+      "无铅油漆",
+      "无铅颜料",
+      "不锈钢水管"
+    ]
+  },
+  {
+    "name": "磺酸钠",
+    "aliases": [
+      "烷基磺酸钠",
+      "AS"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗衣粉",
+      "洗洁精"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，对皮肤有轻微刺激",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗5分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "无磺酸钠配方的洗涤剂"
+    ],
+    "id": "msds_059"
+  },
+  {
+    "name": "次氯酸",
+    "aliases": [
+      "HCLO",
+      "微酸性次氯酸"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "弱酸性次氯酸水",
+      "宠物除菌液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，弱氧化性",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "分解为氯离子和水",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "本身即较环保"
+    ],
+    "id": "msds_060"
+  },
+  {
+    "name": "醋酸",
+    "aliases": [
+      "乙酸",
+      "冰醋酸",
+      "食醋精"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "白醋",
+      "家用除垢剂",
+      "食品加工"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，浓溶液刺激皮肤",
+    "flammability": "可燃（冰醋酸）",
+    "corrosivity": "弱腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封阴凉储存",
+    "green_alternatives": [
+      "食品级白醋即绿色替代"
+    ],
+    "id": "msds_061"
+  },
+  {
+    "name": "草酸",
+    "aliases": [
+      "乙二酸",
+      "Oxalic acid"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "除锈剂",
+      "木材漂白剂",
+      "地毯清洁剂"
+    ],
+    "hazard_level": "高",
+    "toxicity": "有毒，与钙结合致低钙血症，可致肾结石和肾衰竭",
+    "flammability": "可燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "影响水体钙平衡",
+    "first_aid_ingestion": "立即饮牛奶或补钙，紧急就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "密封储存，远离儿童",
+    "green_alternatives": [
+      "柠檬酸除锈",
+      "小苏打糊擦拭"
+    ],
+    "id": "msds_062"
+  },
+  {
+    "name": "苯甲酸钠",
+    "aliases": [
+      "Sodium benzoate",
+      "安息香酸钠"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "防腐剂",
+      "洗涤剂增效剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，食品级安全",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身即食品级"
+    ],
+    "id": "msds_063"
+  },
+  {
+    "name": "十二烷基硫酸钠",
+    "aliases": [
+      "SDS",
+      "K12",
+      "SLS",
+      "月桂醇硫酸钠"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗发水",
+      "沐浴露",
+      "牙膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度刺激皮肤",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "无硫酸盐洗发水",
+      "氨基酸表活"
+    ],
+    "id": "msds_064"
+  },
+  {
+    "name": "椰油酰胺丙基甜菜碱",
+    "aliases": [
+      "CAB",
+      "CAPB",
+      "两性离子表活"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "温和洗发水",
+      "婴儿沐浴露",
+      "洗手液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，对皮肤和眼睛温和",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "极少过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "本身即温和绿色"
+    ],
+    "id": "msds_065"
+  },
+  {
+    "name": "脂肪醇聚氧乙烯醚",
+    "onyms": [
+      "AEO",
+      "平平加",
+      "非离子表活"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗洁精",
+      "洗衣液",
+      "乳化剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，对皮肤温和",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉干燥储存",
+    "green_alternatives": [
+      "烷基糖苷替代"
+    ],
+    "id": "msds_066"
+  },
+  {
+    "name": "过氧化碳酸钠",
+    "onyms": [
+      "过碳酸钠",
+      "固体双氧水",
+      "SPC"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "彩漂粉",
+      "衣物浸泡剂",
+      "洗衣机槽清洁剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，放氧可刺激",
+    "flammability": "不燃，但强氧化助燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺激",
+    "environment": "分解为碳酸钠和过氧化氢",
+    "first_aid_ingestion": "饮清水稀释，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封干燥储存，远离可燃物",
+    "green_alternatives": [
+      "小苏打+白醋替代"
+    ],
+    "id": "msds_067"
+  },
+  {
+    "name": "甲基异噻唑啉酮",
+    "onyms": [
+      "MIT",
+      "卡松",
+      "防腐剂"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "湿巾防腐剂",
+      "洗发水防腐剂",
+      "涂料防腐剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，可致接触性皮炎",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "强致敏，欧盟已限制使用",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮清水稀释就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "无防腐剂配方",
+      "天然防腐剂"
+    ],
+    "id": "msds_068"
+  },
+  {
+    "name": "4-甲基异丙基环己二烯",
+    "onyms": [
+      "4-叔丁基环己基乙酸酯",
+      "驱蚊酯代谢物"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "清洁溶剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，溶剂类",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉密封储存",
+    "green_alternatives": [
+      "水基清洁剂"
+    ],
+    "id": "msds_069"
+  },
+  {
+    "name": "二丙二醇甲醚",
+    "onyms": [
+      "DPM",
+      "甲氧基甲醚"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "工业清洁剂",
+      "玻璃水"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，对皮肤有轻微刺激",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉密封储存",
+    "green_alternatives": [
+      "水基溶剂"
+    ],
+    "id": "msds_070"
+  },
+  {
+    "name": "次氯酸钙",
+    "onyms": [
+      "漂白粉",
+      "氯石灰",
+      "Calcium hypochlorite"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "漂白粉",
+      "消毒漂白剂",
+      "泳池消毒"
+    ],
+    "hazard_level": "高",
+    "toxicity": "强氧化性，释放氯气刺激呼吸道",
+    "flammability": "不燃，但可助燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎和呼吸道过敏",
+    "environment": "对水生生物高毒",
+    "first_aid_ingestion": "勿催吐，饮牛奶，立即就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "密封避光干燥储存，远离酸和可燃物",
+    "green_alternatives": [
+      "过氧化氢漂白",
+      "氧漂粉"
+    ],
+    "id": "msds_071"
+  },
+  {
+    "name": "氯己定",
+    "onyms": [
+      "洗必泰",
+      "葡萄糖酸氯己定",
+      "Hibitane"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "漱口水",
+      "手术皮肤消毒",
+      "创口护理"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，偶致过敏",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致接触性皮炎和黏膜刺激",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "大量饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "盐水漱口",
+      "茶树精油"
+    ],
+    "id": "msds_072"
+  },
+  {
+    "name": "氯化十六烷基吡啶",
+    "onyms": [
+      "CPC",
+      "吡啶氯铵"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "漱口水",
+      "消毒湿巾"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，黏膜刺激",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人过敏",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "精油漱口水"
+    ],
+    "id": "msds_073"
+  },
+  {
+    "name": "三氯生",
+    "onyms": [
+      "Triclosan",
+      "玉洁新",
+      "二氯苯氧氯酚"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "抗菌皂",
+      "抗菌牙膏",
+      "洗手液"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，内分泌干扰嫌疑，FDA已禁",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致接触性皮炎",
+    "environment": "持久污染，影响水生生物",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "普通肥皂洗手",
+      "酒精消毒"
+    ],
+    "id": "msds_074"
+  },
+  {
+    "name": "硫酸铜",
+    "onyms": [
+      "蓝矾",
+      "胆矾",
+      "Copper sulfate"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "游泳池杀菌",
+      "农业杀菌剂",
+      "鱼缸消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激消化道",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物高毒，杀藻",
+    "first_aid_ingestion": "饮牛奶或蛋清，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离金属",
+    "green_alternatives": [
+      "紫外消毒",
+      "臭氧消毒"
+    ],
+    "id": "msds_075"
+  },
+  {
+    "name": "苯酚",
+    "onyms": [
+      "石碳酸",
+      "Phenol",
+      "羟基苯"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "消毒剂",
+      "防腐剂",
+      "早期消毒剂"
+    ],
+    "hazard_level": "高",
+    "toxicity": "高毒，腐蚀皮肤黏膜，吸收后致中枢抑制和肝肾损伤",
+    "flammability": "可燃",
+    "corrosivity": "强腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物高毒",
+    "first_aid_ingestion": "勿催吐，立即饮牛奶，紧急就医",
+    "first_aid_skin": "先用聚乙烯乙二醇冲洗再清水",
+    "first_aid_eye": "清水冲洗30分钟紧急就医",
+    "first_aid_inhalation": "移至空气新鲜处给氧",
+    "storage": "密封避光储存，远离儿童",
+    "green_alternatives": [
+      "酒精消毒",
+      "含氯消毒剂"
+    ],
+    "id": "msds_076"
+  },
+  {
+    "name": "氯化锌",
+    "onyms": [
+      "Zinc chloride",
+      "锌氯粉"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "牙根管消毒",
+      "木材防腐"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，腐蚀组织",
+    "flammability": "不燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮牛奶，就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封干燥储存",
+    "green_alternatives": [
+      "无"
+    ],
+    "id": "msds_077"
+  },
+  {
+    "name": "碘",
+    "onyms": [
+      "碘单质",
+      "Iodine",
+      "碘酒成分"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "碘酒",
+      "碘酊",
+      "医用消毒剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激甲状腺",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "碘过敏者禁用",
+    "environment": "低浓度环境友好",
+    "first_aid_ingestion": "饮淀粉水，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "酒精消毒"
+    ],
+    "id": "msds_078"
+  },
+  {
+    "name": "氯化羟铝",
+    "onyms": [
+      "铝盐止汗剂",
+      "ACH"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "止汗剂",
+      "净水剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，铝摄入争议",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致皮肤刺激",
+    "environment": "铝离子污染",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "无铝止汗剂"
+    ],
+    "id": "msds_079"
+  },
+  {
+    "name": "次溴酸钠",
+    "onyms": [
+      "Sodium hypobromite"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "泳池消毒",
+      "工业水处理"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，强氧化性刺激",
+    "flammability": "不燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "饮牛奶，就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "溴化物替代"
+    ],
+    "id": "msds_080"
+  },
+  {
+    "name": "戊二醛基替代物",
+    "onyms": [
+      "Ortho-phthalaldehyde",
+      "OPA"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "内窥镜消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激皮肤黏膜",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "勿催吐，饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "过氧化氢"
+    ],
+    "id": "msds_081"
+  },
+  {
+    "name": "氟虫腈",
+    "onyms": [
+      "Fipronil",
+      "锐劲特"
+    ],
+    "category": "农药",
+    "common_products": [
+      "白蚁防治",
+      "宠物跳蚤药"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，影响 GABA 受体",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物剧毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "用肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离蜜蜂养殖区",
+    "green_alternatives": [
+      "生物防治",
+      "物理方法"
+    ],
+    "id": "msds_082"
+  },
+  {
+    "name": "茚虫威",
+    "onyms": [
+      "Indoxacarb",
+      "安打"
+    ],
+    "category": "农药",
+    "common_products": [
+      "棉花害虫防治",
+      "蔬菜杀虫"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，影响钠通道",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "用肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "Bt 生物农药"
+    ],
+    "id": "msds_083"
+  },
+  {
+    "name": "螺螨酯",
+    "onyms": [
+      "Spirodiclofen"
+    ],
+    "category": "农药",
+    "common_products": [
+      "果树杀螨剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "对鱼类有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "矿物油乳剂",
+      "生物杀螨"
+    ],
+    "id": "msds_084"
+  },
+  {
+    "name": "多杀菌素",
+    "onyms": [
+      "Spinosad",
+      "菜喜"
+    ],
+    "category": "农药",
+    "common_products": [
+      "生物杀虫剂",
+      "有机杀虫"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，影响烟碱受体",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂中等毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "本身是生物农药"
+    ],
+    "id": "msds_085"
+  },
+  {
+    "name": "Bt 杀虫剂",
+    "onyms": [
+      "苏云金杆菌",
+      "Bacillus thuringiensis",
+      "B.t."
+    ],
+    "category": "农药",
+    "common_products": [
+      "生物杀虫剂",
+      "有机农业"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，对哺乳动物安全",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好，专一性强",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光冷藏储存",
+    "green_alternatives": [
+      "本身是绿色生物农药"
+    ],
+    "id": "msds_086"
+  },
+  {
+    "name": "拟除虫菊酯",
+    "onyms": [
+      "氯氟氰菊酯",
+      "功夫菊酯",
+      "Lambda-cyhalothrin"
+    ],
+    "category": "农药",
+    "common_products": [
+      "杀虫气雾剂",
+      "蚊香",
+      "农业杀虫"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，影响神经钠通道",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺痛感",
+    "environment": "对蜜蜂和水生生物剧毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离鱼和蜜蜂",
+    "green_alternatives": [
+      "蚊帐",
+      "硅藻土",
+      "Bt 制剂"
+    ],
+    "id": "msds_087"
+  },
+  {
+    "name": "藜芦碱",
+    "onyms": [
+      "Veratryl",
+      "生物碱杀虫剂"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物源杀虫剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，植物源生物碱",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "环境友好，可降解",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "本身是植物源农药"
+    ],
+    "id": "msds_088"
+  },
+  {
+    "name": "苦参碱",
+    "onyms": [
+      "Matrine",
+      "植物源农药"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物源杀虫剂",
+      "中药杀虫"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，植物源生物碱",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好，可降解",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是绿色农药"
+    ],
+    "id": "msds_089"
+  },
+  {
+    "name": "阿维菌素苯甲酸盐",
+    "onyms": [
+      "甲维盐",
+      "Emamectin benzoate"
+    ],
+    "category": "农药",
+    "common_products": [
+      "广谱杀虫剂",
+      "蔬菜害虫防治"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，GABA 受体激动剂",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物高毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "Bt 制剂",
+      "物理防治"
+    ],
+    "id": "msds_090"
+  },
+  {
+    "name": "烯酰吗啉",
+    "onyms": [
+      "Dimethomorph",
+      "杀菌剂"
+    ],
+    "category": "农药",
+    "common_products": [
+      "蔬菜杀菌剂",
+      "葡萄霜霉病防治"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "对鱼类有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "波尔多液"
+    ],
+    "id": "msds_091"
+  },
+  {
+    "name": "草铵膦",
+    "onyms": [
+      "Glufosinate",
+      "百草枯替代剂"
+    ],
+    "category": "农药",
+    "common_products": [
+      "除草剂",
+      "替代百草枯"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，抑制谷氨酰胺合成",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "机械除草",
+      "覆盖物"
+    ],
+    "id": "msds_092"
+  },
+  {
+    "name": "矮壮素",
+    "onyms": [
+      "Chlormequat chloride",
+      "CCC"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物生长调节剂",
+      "小麦矮化"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，抑制赤霉素合成",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "可降解",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封干燥储存",
+    "green_alternatives": [
+      "本身是植物生长调节剂"
+    ],
+    "id": "msds_093"
+  },
+  {
+    "name": "赤霉酸",
+    "onyms": [
+      "Gibberellic acid",
+      "GA3",
+      "植物激素"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物生长调节剂",
+      "葡萄膨大剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光冷藏储存",
+    "green_alternatives": [
+      "本身是植物激素"
+    ],
+    "id": "msds_094"
+  },
+  {
+    "name": "头孢克肟",
+    "onyms": [
+      "Cefixime",
+      "世福素"
+    ],
+    "category": "药品",
+    "common_products": [
+      "头孢克肟胶囊",
+      "头孢克肟分散片"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，过量致胃肠不适",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "头孢过敏者禁用（与青霉素交叉过敏）",
+    "environment": "诱导耐药菌",
+    "first_aid_ingestion": "过敏立即肾上腺素+就医",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无吸入风险",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "对症治疗"
+    ],
+    "id": "msds_095"
+  },
+  {
+    "name": "阿奇霉素",
+    "onyms": [
+      "Azithromycin",
+      "希舒美"
+    ],
+    "category": "药品",
+    "common_products": [
+      "阿奇霉素片",
+      "希舒美"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，过量致胃肠不适",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "大环内酯类过敏者禁用",
+    "environment": "诱导耐药菌",
+    "first_aid_ingestion": "对症处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无吸入风险",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "对症治疗"
+    ],
+    "id": "msds_096"
+  },
+  {
+    "name": "维生素C",
+    "onyms": [
+      "抗坏血酸",
+      "Vitamin C",
+      "VC"
+    ],
+    "category": "药品",
+    "common_products": [
+      "维生素C片",
+      "泡腾片",
+      "保健品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，过量致腹泻和肾结石风险",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "食补替代"
+    ],
+    "id": "msds_097"
+  },
+  {
+    "name": "葡萄糖酸钙",
+    "onyms": [
+      "Calcium gluconate"
+    ],
+    "category": "药品",
+    "common_products": [
+      "补钙剂",
+      "葡萄糖酸钙口服液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "食补（牛奶、豆腐）"
+    ],
+    "id": "msds_098"
+  },
+  {
+    "name": "蒙脱石散",
+    "onyms": [
+      "Smectite",
+      "思密达",
+      "Diosmectite"
+    ],
+    "category": "药品",
+    "common_products": [
+      "思密达",
+      "蒙脱石散"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，物理吸附",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身即物理药物"
+    ],
+    "id": "msds_099"
+  },
+  {
+    "name": "乳果糖",
+    "onyms": [
+      "Lactulose",
+      "杜密克"
+    ],
+    "category": "药品",
+    "common_products": [
+      "杜密克",
+      "乳果糖口服液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，轻泻",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "膳食纤维替代"
+    ],
+    "id": "msds_100"
+  },
+  {
+    "name": "开塞露",
+    "onyms": [
+      "甘油栓",
+      "甘油灌肠剂"
+    ],
+    "category": "药品",
+    "common_products": [
+      "开塞露",
+      "甘油栓"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "膳食纤维",
+      "运动"
+    ],
+    "id": "msds_101"
+  },
+  {
+    "name": "炉甘石",
+    "onyms": [
+      "Calamine",
+      "炉甘石洗剂"
+    ],
+    "category": "药品",
+    "common_products": [
+      "炉甘石洗剂",
+      "婴儿护臀膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，外用安全",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身即外用安全"
+    ],
+    "id": "msds_102"
+  },
+  {
+    "name": "红霉素",
+    "onyms": [
+      "Erythromycin",
+      "红霉素软膏"
+    ],
+    "category": "药品",
+    "common_products": [
+      "红霉素软膏",
+      "红霉素眼膏",
+      "红霉素肠溶片"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "大环内酯类过敏者禁用",
+    "environment": "诱导耐药菌",
+    "first_aid_ingestion": "对症处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无吸入风险",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "对症治疗"
+    ],
+    "id": "msds_103"
+  },
+  {
+    "name": "风油精",
+    "onyms": [
+      "Menthol camphor"
+    ],
+    "category": "药品",
+    "common_products": [
+      "风油精",
+      "清凉油"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含樟脑和薄荷脑",
+    "flammability": "易燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致接触性皮炎",
+    "environment": "常规使用无显著危害",
+    "first_aid_ingestion": "勿催吐，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避火储存，远离儿童",
+    "green_alternatives": [
+      "薄荷膏"
+    ],
+    "id": "msds_104"
+  },
+  {
+    "name": "花露水",
+    "onyms": [
+      "Floral water",
+      "驱蚊花露水"
+    ],
+    "category": "药品",
+    "common_products": [
+      "六神花露水",
+      "强生驱蚊水"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含酒精和驱蚊酯",
+    "flammability": "易燃（含酒精）",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "常规使用无显著危害",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避火储存，远离儿童",
+    "green_alternatives": [
+      "物理驱蚊",
+      "精油驱蚊"
+    ],
+    "id": "msds_105"
+  },
+  {
+    "name": "达克宁",
+    "onyms": [
+      "硝酸咪康唑",
+      "Miconazole",
+      "抗真菌药"
+    ],
+    "category": "药品",
+    "common_products": [
+      "达克宁霜",
+      "硝酸咪康唑乳膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，外用安全",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致局部刺激",
+    "environment": "常规使用无显著危害",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "茶树精油"
+    ],
+    "id": "msds_106"
+  },
+  {
+    "name": "999皮炎平",
+    "onyms": [
+      "复方醋酸地塞米松",
+      "皮炎平"
+    ],
+    "category": "药品",
+    "common_products": [
+      "999皮炎平",
+      "复方醋酸地塞米松乳膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含激素",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "长期使用致皮肤萎缩",
+    "environment": "常规使用无显著危害",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存，不宜长期大面积使用",
+    "green_alternatives": [
+      "炉甘石洗剂",
+      "芦荟胶"
+    ],
+    "id": "msds_107"
+  },
+  {
+    "name": "二氧化钛",
+    "onyms": [
+      "Titanium dioxide",
+      "钛白粉",
+      "CI77891"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "防晒霜",
+      "粉底",
+      "遮瑕膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，外用安全（纳米级吸入风险）",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "对水生生物有一定影响",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "氧化锌防晒"
+    ],
+    "id": "msds_108"
+  },
+  {
+    "name": "氧化锌",
+    "onyms": [
+      "Zinc oxide",
+      "锌白"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "物理防晒霜",
+      "护臀膏",
+      "炉甘石洗剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，外用安全",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "对水生生物有一定影响",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是物理防晒"
+    ],
+    "id": "msds_109"
+  },
+  {
+    "name": "滑石粉",
+    "onyms": [
+      "Talc",
+      "爽身粉成分"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "爽身粉",
+      "散粉",
+      "眼影"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，长期吸入致肺纤维化",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "玉米淀粉爽身粉"
+    ],
+    "id": "msds_110"
+  },
+  {
+    "name": "维生素E",
+    "onyms": [
+      "生育酚",
+      "Tocopherol",
+      "VE"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "护肤品",
+      "面霜",
+      "防晒霜"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "天然VE"
+    ],
+    "id": "msds_111"
+  },
+  {
+    "name": "透明质酸",
+    "onyms": [
+      "玻尿酸",
+      "Hyaluronic acid"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "保湿面膜",
+      "精华液",
+      "护肤品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然保湿成分"
+    ],
+    "id": "msds_112"
+  },
+  {
+    "name": "烟酰胺",
+    "onyms": [
+      "Niacinamide",
+      "维生素B3",
+      "尼克酰胺"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "美白精华",
+      "面霜",
+      "护肤品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_113"
+  },
+  {
+    "name": "防腐剂（化妆品）",
+    "onyms": [
+      "苯氧乙醇",
+      "Phenoxyethanol"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "护肤品防腐剂",
+      "精华液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度刺激皮肤",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致接触性皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "无防腐剂配方",
+      "天然防腐剂"
+    ],
+    "id": "msds_114"
+  },
+  {
+    "name": "驱蚊酯",
+    "onyms": [
+      "IR3535",
+      "伊默宁",
+      "Ethyl butylacetylaminopropionate"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "驱蚊液",
+      "花露水",
+      "驱蚊喷雾"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "柠檬桉精油",
+      "物理驱蚊"
+    ],
+    "id": "msds_115"
+  },
+  {
+    "name": "避蚊胺",
+    "onyms": [
+      "DEET",
+      "N,N-二乙基-3-甲基苯甲酰胺"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "驱蚊液",
+      "驱蚊喷雾",
+      "户外驱蚊"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，高浓度刺激皮肤和神经系统",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "勿催吐，就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离儿童",
+    "green_alternatives": [
+      "驱蚊酯",
+      "柠檬桉精油",
+      "物理驱蚊"
+    ],
+    "id": "msds_116"
+  },
+  {
+    "name": "防晒剂（化学）",
+    "onyms": [
+      "氧苯酮",
+      "二苯酮-3",
+      "Oxybenzone"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "化学防晒霜",
+      "防晒喷雾"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，内分泌干扰嫌疑",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致光敏反应",
+    "environment": "对珊瑚礁有害",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "物理防晒（氧化锌、二氧化钛）"
+    ],
+    "id": "msds_117"
+  },
+  {
+    "name": "水杨酸",
+    "onyms": [
+      "Salicylic acid",
+      "柳酸",
+      "BHA"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "祛痘产品",
+      "去角质精华",
+      "爽肤水"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，高浓度致水杨酸中毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎（阿司匹林过敏者慎用）",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "就医，碱化尿液",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，孕妇慎用",
+    "green_alternatives": [
+      "果酸替代",
+      "茶树精油"
+    ],
+    "id": "msds_118"
+  },
+  {
+    "name": "丙烷",
+    "onyms": [
+      "Propane",
+      "液化石油气",
+      "LPG 成分"
+    ],
+    "category": "其他",
+    "common_products": [
+      "打火机燃料",
+      "卡式炉",
+      "燃气罐"
+    ],
+    "hazard_level": "高",
+    "toxicity": "低毒，高浓度致窒息",
+    "flammability": "极易燃，爆炸极限 2.1%-9.5%",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "温室气体",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "冻伤就医",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至空气新鲜处，必要时人工呼吸",
+    "storage": "阴凉通风储存，远离火源和热源",
+    "green_alternatives": [
+      "电力设备"
+    ],
+    "id": "msds_119"
+  },
+  {
+    "name": "丁烷",
+    "onyms": [
+      "Butane",
+      "打火机气体"
+    ],
+    "category": "其他",
+    "common_products": [
+      "打火机",
+      "发胶推进剂"
+    ],
+    "hazard_level": "高",
+    "toxicity": "低毒，高浓度致窒息",
+    "flammability": "极易燃，爆炸极限 1.8%-8.4%",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "温室气体",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "冻伤就医",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "阴凉通风储存，远离火源",
+    "green_alternatives": [
+      "电子设备"
+    ],
+    "id": "msds_120"
+  },
+  {
+    "name": "天然气",
+    "onyms": [
+      "甲烷",
+      "Methane",
+      "管道燃气"
+    ],
+    "category": "其他",
+    "common_products": [
+      "管道燃气",
+      "燃气灶",
+      "燃气热水器"
+    ],
+    "hazard_level": "高",
+    "toxicity": "低毒，高浓度致窒息",
+    "flammability": "极易燃，爆炸极限 5%-15%",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "强温室气体",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "无需处理",
+    "first_aid_inhalation": "立即移至空气新鲜处，必要时人工呼吸",
+    "storage": "预防为主：安装燃气报警器，保持通风",
+    "green_alternatives": [
+      "电力设备",
+      "太阳能"
+    ],
+    "id": "msds_121"
+  },
+  {
+    "name": "丙二醇",
+    "onyms": [
+      "Propylene glycol",
+      "PG"
+    ],
+    "category": "其他",
+    "common_products": [
+      "食品添加剂",
+      "化妆品保湿剂",
+      "电子烟液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，食品级安全",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "食品级安全"
+    ],
+    "id": "msds_122"
+  },
+  {
+    "name": "三聚氰胺",
+    "onyms": [
+      "Melamine",
+      "密胺",
+      "氰三酰胺"
+    ],
+    "category": "其他",
+    "common_products": [
+      "仿密胺餐具",
+      "贴面板涂料"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，致肾结石和肾损伤",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "难降解",
+    "first_aid_ingestion": "立即就医，碱化尿液",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，不可用于食品加热",
+    "green_alternatives": [
+      "不锈钢餐具",
+      "陶瓷餐具"
+    ],
+    "id": "msds_123"
+  },
+  {
+    "name": "石棉",
+    "onyms": [
+      "Asbestos",
+      "石绵"
+    ],
+    "category": "其他",
+    "common_products": [
+      "旧建筑保温材料",
+      "防火门",
+      "旧管道包裹"
+    ],
+    "hazard_level": "极高",
+    "toxicity": "IARC 1类致癌物（间皮瘤、肺癌），纤维吸入致病",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "无",
+    "environment": "持久污染",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "立即离开污染区，就医检查",
+    "storage": "已禁用，旧建筑翻新须专业处理",
+    "green_alternatives": [
+      "岩棉",
+      "玻璃纤维"
+    ],
+    "id": "msds_124"
+  },
+  {
+    "name": "氰化物",
+    "onyms": [
+      "氰化钾",
+      "氰化钠",
+      "Potassium cyanide"
+    ],
+    "category": "其他",
+    "common_products": [
+      "工业电镀",
+      "已禁止民用"
+    ],
+    "hazard_level": "极高",
+    "toxicity": "剧毒，抑制细胞呼吸，微量致死",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "无",
+    "environment": "对水生生物剧毒",
+    "first_aid_ingestion": "立即催吐，立即亚硝酸异戊酯吸入，紧急呼救120",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "立即移至空气新鲜处给氧",
+    "storage": "严格管制，禁止家庭存放",
+    "green_alternatives": [
+      "无",
+      "已禁止民用"
+    ],
+    "id": "msds_125"
+  },
+  {
+    "name": "亚硝酸盐",
+    "onyms": [
+      "Sodium nitrite",
+      "亚硝酸钠"
+    ],
+    "category": "其他",
+    "common_products": [
+      "食品防腐剂",
+      "工业防冻液"
+    ],
+    "hazard_level": "高",
+    "toxicity": "高毒，致高铁血红蛋白血症（蓝婴综合征）",
+    "flammability": "不燃，但助燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "无",
+    "environment": "污染水体，富营养化",
+    "first_aid_ingestion": "立即催吐，亚甲蓝解毒，紧急就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离食品和儿童",
+    "green_alternatives": [
+      "天然防腐剂"
+    ],
+    "id": "msds_126"
+  },
+  {
+    "name": "干燥剂（食品）",
+    "onyms": [
+      "硅胶干燥剂",
+      "Silica gel"
+    ],
+    "category": "其他",
+    "common_products": [
+      "食品包装干燥剂",
+      "药品干燥剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，物理吸附，误食一般无害",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，避免儿童误玩",
+    "green_alternatives": [
+      "食品级安全"
+    ],
+    "id": "msds_127"
+  },
+  {
+    "name": "生石灰",
+    "onyms": [
+      "氧化钙",
+      "Calcium oxide",
+      "CaO"
+    ],
+    "category": "其他",
+    "common_products": [
+      "干燥剂",
+      "建筑用灰",
+      "自热包"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，遇水放热致灼伤",
+    "flammability": "不燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "强碱性",
+    "first_aid_ingestion": "勿催吐，饮牛奶或水稀释，就医",
+    "first_aid_skin": "先用油清除再清水冲洗",
+    "first_aid_eye": "立即清水冲洗30分钟紧急就医",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "密封干燥储存，远离水和儿童",
+    "green_alternatives": [
+      "硅胶干燥剂"
+    ],
+    "id": "msds_128"
+  },
+  {
+    "name": "管道天然气加臭剂",
+    "onyms": [
+      "四氢噻吩",
+      "THT",
+      "Thiols"
+    ],
+    "category": "其他",
+    "common_products": [
+      "天然气加臭",
+      "燃气泄漏警示"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，高浓度致头痛",
+    "flammability": "易燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致不适",
+    "environment": "可降解",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "立即移至空气新鲜处，检查燃气泄漏",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "燃气报警器"
+    ],
+    "id": "msds_129"
+  },
+  {
+    "name": "苯并芘",
+    "onyms": [
+      "Benzo[a]pyrene",
+      "B[a]P"
+    ],
+    "category": "其他",
+    "common_products": [
+      "烧烤烟雾",
+      "汽车尾气",
+      "香烟烟雾"
+    ],
+    "hazard_level": "极高",
+    "toxicity": "IARC 1类致癌物（皮肤癌、肺癌、消化道癌）",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "无",
+    "environment": "持久污染，生物富集",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "避免产生：烧烤时通风，减少高温烹饪",
+    "green_alternatives": [
+      "蒸煮替代烧烤",
+      "使用抽油烟机"
+    ],
+    "id": "msds_130"
+  },
+  {
+    "name": "十二烷基醚硫酸钠",
+    "aliases": [
+      "SLES",
+      "AES",
+      "脂肪醇醚硫酸钠"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗发水",
+      "沐浴露",
+      "洗手液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，对皮肤有轻微刺激",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "无硫酸盐配方",
+      "氨基酸表活"
+    ],
+    "id": "msds_131"
+  },
+  {
+    "name": "椰油酰谷氨酸钠",
+    "onyms": [
+      "Sodium cocoyl glutamate",
+      "氨基酸表活"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "氨基酸洗面奶",
+      "温和洁面"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，对皮肤温和",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "极少过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_132"
+  },
+  {
+    "name": "月桂基葡糖苷",
+    "onyms": [
+      "Decyl glucoside",
+      "APG",
+      "非离子表活"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "婴儿洗发水",
+      "温和洁面"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "极少过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_133"
+  },
+  {
+    "name": "氯化钠",
+    "onyms": [
+      "食盐",
+      "Sodium chloride",
+      "NaCl"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "融雪剂",
+      "盐水清洁"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "高浓度影响土壤和水体",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是食品级"
+    ],
+    "id": "msds_134"
+  },
+  {
+    "name": "次氯酸钠（低浓度）",
+    "onyms": [
+      "弱次氯酸",
+      "低浓度漂白水"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "家用稀释漂白液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，稀释后较安全",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "白醋+小苏打"
+    ],
+    "id": "msds_135"
+  },
+  {
+    "name": "十二烷基二甲基甜菜碱",
+    "onyms": [
+      "BS-12",
+      "甜菜碱表活"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "温和洗发水",
+      "沐浴露"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "极少过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "本身是温和成分"
+    ],
+    "id": "msds_136"
+  },
+  {
+    "name": "脂肪醇聚氧硫酸钠",
+    "onyms": [
+      "SES",
+      "脂肪醇醚硫酸钠"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗洁精",
+      "洗衣液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "烷基糖苷替代"
+    ],
+    "id": "msds_137"
+  },
+  {
+    "name": "椰子油二乙醇酰胺",
+    "onyms": [
+      "CDEA",
+      "6501",
+      "稳泡剂"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗发水",
+      "沐浴露",
+      "洗洁精"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "无"
+    ],
+    "id": "msds_138"
+  },
+  {
+    "name": "脂肪叔胺",
+    "onyms": [
+      "Tertiary amine",
+      "乳化剂"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "柔软剂",
+      "护发素"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉储存",
+    "green_alternatives": [
+      "天然柔软剂"
+    ],
+    "id": "msds_139"
+  },
+  {
+    "name": "聚二甲基硅氧烷",
+    "onyms": [
+      "Dimethicone",
+      "硅油",
+      "Dimethyl silicone"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "柔顺剂",
+      "护发素",
+      "护肤品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，外用安全",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "难降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然油脂替代"
+    ],
+    "id": "msds_140"
+  },
+  {
+    "name": "过硫酸氢钾",
+    "onyms": [
+      "Potassium peroxymonosulfate",
+      "Virkon"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "宠物消毒",
+      "环境消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，强氧化性",
+    "flammability": "不燃，但强氧化助燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "密封干燥储存，远离可燃物",
+    "green_alternatives": [
+      "高温蒸汽"
+    ],
+    "id": "msds_141"
+  },
+  {
+    "name": "邻苯二甲醛",
+    "onyms": [
+      "OPA",
+      "Ortho-phthalaldehyde"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "内窥镜消毒",
+      "医疗器械消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激皮肤黏膜",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "勿催吐，饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "过氧化氢"
+    ],
+    "id": "msds_142"
+  },
+  {
+    "name": "次氯酸水",
+    "onyms": [
+      "HClO water",
+      "微酸性电解水"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "食品消毒",
+      "伤口清洗"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，弱氧化性",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "分解为氯离子和水",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "本身即较环保"
+    ],
+    "id": "msds_143"
+  },
+  {
+    "name": "银离子",
+    "onyms": [
+      "Silver ion",
+      "纳米银",
+      "Ag+"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "抗菌喷雾",
+      "抗菌涂层"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，长期使用致银质沉着症",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光储存",
+    "green_alternatives": [
+      "物理消毒"
+    ],
+    "id": "msds_144"
+  },
+  {
+    "name": "光触媒",
+    "onyms": [
+      "TiO2 photocatalyst",
+      "纳米二氧化钛"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "空气净化",
+      "自清洁涂层"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，纳米颗粒吸入风险",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是绿色技术"
+    ],
+    "id": "msds_145"
+  },
+  {
+    "name": "季铵盐（双链）",
+    "onyms": [
+      "双链季铵盐",
+      "DDAC",
+      "双癸基二甲基氯化铵"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "消毒湿巾",
+      "环境消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激皮肤",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "高温消毒"
+    ],
+    "id": "msds_146"
+  },
+  {
+    "name": "植物精油（抗菌）",
+    "onyms": [
+      "茶树精油",
+      "桉树精油",
+      "Thyme oil"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "天然消毒喷雾",
+      "芳香疗法"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度刺激",
+    "flammability": "易燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光储存",
+    "green_alternatives": [
+      "本身是天然成分"
+    ],
+    "id": "msds_147"
+  },
+  {
+    "name": "乳酸",
+    "onyms": [
+      "Lactic acid",
+      "2-羟基丙酸"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "食品级消毒",
+      "除垢剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，食品级安全",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_148"
+  },
+  {
+    "name": "印楝素",
+    "onyms": [
+      "Azadirachtin",
+      "Neem oil",
+      "苦楝素"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物源杀虫剂",
+      "有机农业"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，植物源生物碱",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好，可降解",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封避光储存",
+    "green_alternatives": [
+      "本身是绿色农药"
+    ],
+    "id": "msds_149"
+  },
+  {
+    "name": "鱼藤酮",
+    "onyms": [
+      "Rotenone",
+      "毒鱼藤"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物源杀虫剂",
+      "已限用"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，影响线粒体呼吸",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对鱼类剧毒",
+    "first_aid_ingestion": "立即催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离鱼类",
+    "green_alternatives": [
+      "Bt 制剂"
+    ],
+    "id": "msds_150"
+  },
+  {
+    "name": "除虫菊素",
+    "onyms": [
+      "Pyrethrin",
+      "天然除虫菊酯"
+    ],
+    "category": "农药",
+    "common_products": [
+      "植物源杀虫剂",
+      "蚊香"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，影响神经钠通道",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎和哮喘",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光储存",
+    "green_alternatives": [
+      "本身是植物源农药"
+    ],
+    "id": "msds_151"
+  },
+  {
+    "name": "矿物油",
+    "onyms": [
+      "Mineral oil",
+      "石蜡油"
+    ],
+    "category": "农药",
+    "common_products": [
+      "园艺杀虫油",
+      "机油乳剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，物理杀虫",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "难降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉储存",
+    "green_alternatives": [
+      "物理杀虫"
+    ],
+    "id": "msds_152"
+  },
+  {
+    "name": "波尔多液",
+    "onyms": [
+      "Bordeaux mixture",
+      "硫酸铜+石灰"
+    ],
+    "category": "农药",
+    "common_products": [
+      "果树杀菌剂",
+      "有机农业"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，铜离子有一定毒性",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "铜离子积累",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "现用现配",
+    "green_alternatives": [
+      "本身是传统农药"
+    ],
+    "id": "msds_153"
+  },
+  {
+    "name": "硫磺",
+    "onyms": [
+      "Sulfur",
+      "石硫合剂"
+    ],
+    "category": "农药",
+    "common_products": [
+      "杀菌剂",
+      "杀螨剂",
+      "石硫合剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "环境友好",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避火储存",
+    "green_alternatives": [
+      "本身是传统农药"
+    ],
+    "id": "msds_154"
+  },
+  {
+    "name": "石硫合剂",
+    "onyms": [
+      "Lime sulfur",
+      "石灰硫磺"
+    ],
+    "category": "农药",
+    "common_products": [
+      "果树杀菌杀螨",
+      "冬季清园"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，腐蚀皮肤",
+    "flammability": "不燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "强碱性",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "矿物油"
+    ],
+    "id": "msds_155"
+  },
+  {
+    "name": "马拉硫磷",
+    "onyms": [
+      "Malathion",
+      "马拉松"
+    ],
+    "category": "农药",
+    "common_products": [
+      "卫生害虫防治",
+      "农业杀虫"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，有机磷抑制胆碱酯酶",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "立即催吐洗胃，阿托品解毒",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处给氧",
+    "storage": "密封储存，远离食品",
+    "green_alternatives": [
+      "生物农药"
+    ],
+    "id": "msds_156"
+  },
+  {
+    "name": "乙酰甲胺磷",
+    "onyms": [
+      "Acephate",
+      "高灭磷"
+    ],
+    "category": "农药",
+    "common_products": [
+      "农业杀虫剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，有机磷",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "立即催吐洗胃，阿托品解毒",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "生物农药"
+    ],
+    "id": "msds_157"
+  },
+  {
+    "name": "杀螟硫磷",
+    "onyms": [
+      "Fenitrothion",
+      "杀螟松"
+    ],
+    "category": "农药",
+    "common_products": [
+      "农业杀虫剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，有机磷",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "立即催吐洗胃，阿托品解毒",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "生物农药"
+    ],
+    "id": "msds_158"
+  },
+  {
+    "name": "蒙脱石",
+    "onyms": [
+      "Smectite",
+      "思密达成分"
+    ],
+    "category": "药品",
+    "common_products": [
+      "止泻药",
+      "胃黏膜保护剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，物理吸附",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身即物理药物"
+    ],
+    "id": "msds_159"
+  },
+  {
+    "name": "双歧杆菌",
+    "onyms": [
+      "Bifidobacterium",
+      "益生菌"
+    ],
+    "category": "药品",
+    "common_products": [
+      "益生菌制剂",
+      "酸奶"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒，活菌制剂",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "冷藏储存",
+    "green_alternatives": [
+      "食补（酸奶）"
+    ],
+    "id": "msds_160"
+  },
+  {
+    "name": "枯草杆菌",
+    "onyms": [
+      "Bacillus subtilis",
+      "益生菌"
+    ],
+    "category": "药品",
+    "common_products": [
+      "益生菌制剂",
+      "整肠生"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥储存",
+    "green_alternatives": [
+      "食补"
+    ],
+    "id": "msds_161"
+  },
+  {
+    "name": "口服补液盐",
+    "onyms": [
+      "ORS",
+      "Oral rehydration salts"
+    ],
+    "category": "药品",
+    "common_products": [
+      "腹泻补液",
+      "脱水预防"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身即安全"
+    ],
+    "id": "msds_162"
+  },
+  {
+    "name": "叶酸",
+    "onyms": [
+      "Folic acid",
+      "维生素B9"
+    ],
+    "category": "药品",
+    "common_products": [
+      "孕妇维生素",
+      "叶酸片"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "食补（绿叶蔬菜）"
+    ],
+    "id": "msds_163"
+  },
+  {
+    "name": "硫酸亚铁",
+    "onyms": [
+      "Iron sulfate",
+      "补铁剂"
+    ],
+    "category": "药品",
+    "common_products": [
+      "补铁剂",
+      "硫酸亚铁片"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，过量致铁中毒",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "高浓度影响水体",
+    "first_aid_ingestion": "过量立即催吐，去铁胺解毒",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离儿童",
+    "green_alternatives": [
+      "食补（红肉、菠菜）"
+    ],
+    "id": "msds_164"
+  },
+  {
+    "name": "葡萄糖酸锌",
+    "onyms": [
+      "Zinc gluconate",
+      "补锌剂"
+    ],
+    "category": "药品",
+    "common_products": [
+      "补锌剂",
+      "葡萄糖酸锌口服液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "高浓度影响水体",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "食补（牡蛎、牛肉）"
+    ],
+    "id": "msds_165"
+  },
+  {
+    "name": "板蓝根",
+    "onyms": [
+      "Isatis root",
+      "中药"
+    ],
+    "category": "药品",
+    "common_products": [
+      "板蓝根颗粒",
+      "感冒预防"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，中药成分",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是中药"
+    ],
+    "id": "msds_166"
+  },
+  {
+    "name": "小柴胡颗粒",
+    "onyms": [
+      "Bupleurum",
+      "中药感冒药"
+    ],
+    "category": "药品",
+    "common_products": [
+      "小柴胡颗粒",
+      "感冒治疗"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，中药成分",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是中药"
+    ],
+    "id": "msds_167"
+  },
+  {
+    "name": "藿香正气水",
+    "onyms": [
+      "Huoxiang Zhengqi",
+      "中药防暑"
+    ],
+    "category": "药品",
+    "common_products": [
+      "藿香正气水",
+      "防暑解暑"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含酒精",
+    "flammability": "易燃（含酒精）",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是中药"
+    ],
+    "id": "msds_168"
+  },
+  {
+    "name": "六味地黄丸",
+    "onyms": [
+      "Liuwei Dihuang",
+      "中药补肾"
+    ],
+    "category": "药品",
+    "common_products": [
+      "六味地黄丸",
+      "滋阴补肾"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，中药成分",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是中药"
+    ],
+    "id": "msds_169"
+  },
+  {
+    "name": "云南白药",
+    "onyms": [
+      "Yunnan Baiyao",
+      "中药止血"
+    ],
+    "category": "药品",
+    "common_products": [
+      "云南白药粉",
+      "云南白药喷雾"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含草乌（炮制后安全）",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致过敏",
+    "environment": "环境友好",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是中药"
+    ],
+    "id": "msds_170"
+  },
+  {
+    "name": "角鲨烷",
+    "onyms": [
+      "Squalane",
+      "深海鲨鱼提取物替代"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "保湿面霜",
+      "护肤油"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "植物角鲨烷"
+    ],
+    "id": "msds_171"
+  },
+  {
+    "name": "神经酰胺",
+    "onyms": [
+      "Ceramide",
+      "细胞间脂质"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "修复面霜",
+      "屏障修复"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_172"
+  },
+  {
+    "name": "熊果苷",
+    "onyms": [
+      "Arbutin",
+      "美白成分"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "美白精华",
+      "淡斑产品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，释放氢醌争议",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致刺激",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "维生素C",
+      "烟酰胺"
+    ],
+    "id": "msds_173"
+  },
+  {
+    "name": "玻尿酸钠",
+    "onyms": [
+      "Sodium hyaluronate",
+      "透明质酸钠"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "保湿面膜",
+      "精华液"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然保湿成分"
+    ],
+    "id": "msds_174"
+  },
+  {
+    "name": "果酸",
+    "onyms": [
+      "AHA",
+      "Alpha hydroxy acid",
+      "甘醇酸"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "去角质精华",
+      "果酸换肤"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，高浓度腐蚀皮肤",
+    "flammability": "可燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致光敏反应",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，使用后防晒",
+    "green_alternatives": [
+      "酶类去角质"
+    ],
+    "id": "msds_175"
+  },
+  {
+    "name": "视黄醇",
+    "onyms": [
+      "Retinol",
+      "维生素A醇",
+      "A醇"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "抗衰老精华",
+      "视黄醇面霜"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，孕妇禁用",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺激和脱皮",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存，孕妇禁用",
+    "green_alternatives": [
+      "胜肽替代"
+    ],
+    "id": "msds_176"
+  },
+  {
+    "name": "氨基酸",
+    "onyms": [
+      "Amino acid",
+      "复合氨基酸"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "温和洁面",
+      "氨基酸洗发水"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "本身是温和成分"
+    ],
+    "id": "msds_177"
+  },
+  {
+    "name": "胶原蛋白",
+    "onyms": [
+      "Collagen",
+      "水解胶原"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "面膜",
+      "精华液",
+      "护肤品"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_178"
+  },
+  {
+    "name": "尿囊素",
+    "onyms": [
+      "Allantoin",
+      "皮肤修复剂"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "修复面霜",
+      "护手霜"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_179"
+  },
+  {
+    "name": "薄荷醇",
+    "onyms": [
+      "Menthol",
+      "薄荷脑",
+      "薄荷醇"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "清凉油",
+      "花露水",
+      "牙膏"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度刺激",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然薄荷"
+    ],
+    "id": "msds_180"
+  },
+  {
+    "name": "氟利昂",
+    "onyms": [
+      "Freon",
+      "CFC",
+      "氯氟烃"
+    ],
+    "category": "其他",
+    "common_products": [
+      "旧制冷剂",
+      "已禁用"
+    ],
+    "hazard_level": "中",
+    "toxicity": "低毒，破坏臭氧层",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "严重破坏臭氧层，温室气体",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "无需处理",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "已禁用",
+    "green_alternatives": [
+      "新型制冷剂"
+    ],
+    "id": "msds_181"
+  },
+  {
+    "name": "氨",
+    "onyms": [
+      "Ammonia",
+      "液氨",
+      "NH3"
+    ],
+    "category": "其他",
+    "common_products": [
+      "制冷剂",
+      "工业化学品"
+    ],
+    "hazard_level": "高",
+    "toxicity": "高毒，强烈刺激呼吸道",
+    "flammability": "可燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致哮喘",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "勿催吐，饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "立即移至空气新鲜处给氧",
+    "storage": "密封阴凉储存，远离酸",
+    "green_alternatives": [
+      "新型制冷剂"
+    ],
+    "id": "msds_182"
+  },
+  {
+    "name": "硫化氢",
+    "onyms": [
+      "Hydrogen sulfide",
+      "H2S",
+      "臭鸡蛋气"
+    ],
+    "category": "其他",
+    "common_products": [
+      "天然气杂质",
+      "化粪池气体"
+    ],
+    "hazard_level": "极高",
+    "toxicity": "剧毒，低浓度臭鸡蛋味，高浓度麻痹嗅觉致猝死",
+    "flammability": "极易燃，爆炸极限 4.3%-46%",
+    "corrosivity": "无腐蚀",
+    "allergy": "无",
+    "environment": "对水生生物剧毒",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "立即移至空气新鲜处，给氧，紧急呼救120",
+    "storage": "预防为主：密闭空间通风检测",
+    "green_alternatives": [
+      "无"
+    ],
+    "id": "msds_183"
+  },
+  {
+    "name": "氡气",
+    "onyms": [
+      "Radon",
+      "Rn"
+    ],
+    "category": "其他",
+    "common_products": [
+      "土壤析出",
+      "建筑材料释放"
+    ],
+    "hazard_level": "极高",
+    "toxicity": "IARC 1类致癌物（肺癌），放射性气体",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "无",
+    "environment": "放射性污染",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "无需处理",
+    "first_aid_inhalation": "立即离开污染区，通风",
+    "storage": "预防为主：地下室通风，氡检测",
+    "green_alternatives": [
+      "通风",
+      "氡缓解设备"
+    ],
+    "id": "msds_184"
+  },
+  {
+    "name": "甲醛清除剂",
+    "onyms": [
+      "Formaldehyde remover",
+      "甲醛治理"
+    ],
+    "category": "其他",
+    "common_products": [
+      "空气净化器",
+      "活性炭包"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，含氨基化合物",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致刺激",
+    "environment": "可降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "通风",
+      "绿植"
+    ],
+    "id": "msds_185"
+  },
+  {
+    "name": "活性炭",
+    "onyms": [
+      "Activated carbon",
+      "吸附剂"
+    ],
+    "category": "其他",
+    "common_products": [
+      "净水剂",
+      "空气净化",
+      "中毒急救"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，物理吸附",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是吸附剂"
+    ],
+    "id": "msds_186"
+  },
+  {
+    "name": "硅藻土",
+    "onyms": [
+      "Diatomaceous earth",
+      "DE"
+    ],
+    "category": "其他",
+    "common_products": [
+      "天然杀虫剂",
+      "净水过滤"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，吸入致肺刺激",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是天然材料"
+    ],
+    "id": "msds_187"
+  },
+  {
+    "name": "拟除虫菊酯（灭蚊）",
+    "onyms": [
+      "蚊香成分",
+      "丙烯菊酯",
+      "Allethrin"
+    ],
+    "category": "其他",
+    "common_products": [
+      "蚊香",
+      "电蚊香液",
+      "灭蚊喷雾"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，对哺乳动物较安全",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "少数人可致皮肤刺激",
+    "environment": "对蜜蜂和水生生物有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离儿童",
+    "green_alternatives": [
+      "蚊帐",
+      "物理驱蚊"
+    ],
+    "id": "msds_188"
+  },
+  {
+    "name": "氟硅菊酯",
+    "onyms": [
+      "Silafluofen",
+      "硅醚菊酯"
+    ],
+    "category": "其他",
+    "common_products": [
+      "衣物防蛀剂",
+      "灭蟑药"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺激",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "物理防虫"
+    ],
+    "id": "msds_189"
+  },
+  {
+    "name": "氩气",
+    "onyms": [
+      "Argon",
+      "Ar"
+    ],
+    "category": "其他",
+    "common_products": [
+      "焊接保护气",
+      "灯泡填充气"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度致窒息",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "无需处理",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "高压气瓶储存",
+    "green_alternatives": [
+      "惰性气体"
+    ],
+    "id": "msds_190"
+  },
+  {
+    "name": "二氧化碳（高浓度）",
+    "onyms": [
+      "Carbon dioxide",
+      "CO2",
+      "干冰"
+    ],
+    "category": "其他",
+    "common_products": [
+      "碳酸饮料",
+      "灭火器",
+      "干冰"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度致窒息",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "温室气体",
+    "first_aid_ingestion": "无意摄入",
+    "first_aid_skin": "冻伤就医",
+    "first_aid_eye": "无需处理",
+    "first_aid_inhalation": "移至空气新鲜处",
+    "storage": "通风储存",
+    "green_alternatives": [
+      "自然存在"
+    ],
+    "id": "msds_191"
+  },
+  {
+    "name": "柠檬烯",
+    "onyms": [
+      "Limonene",
+      "柑橘精油成分",
+      "d-柠檬烯"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "柑橘清洁剂",
+      "天然溶剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，天然溶剂",
+    "flammability": "易燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避火储存",
+    "green_alternatives": [
+      "本身是天然成分"
+    ],
+    "id": "msds_192"
+  },
+  {
+    "name": "芳樟醇",
+    "onyms": [
+      "Linalool",
+      "精油成分"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "香水",
+      "护肤品",
+      "洗发水"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_193"
+  },
+  {
+    "name": "乙酸乙酯",
+    "onyms": [
+      "Ethyl acetate",
+      "醋酸乙酯"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗甲水",
+      "溶剂",
+      "去胶剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，高浓度致中枢抑制",
+    "flammability": "极易燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "勿催吐，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避火密封储存",
+    "green_alternatives": [
+      "水基溶剂"
+    ],
+    "id": "msds_194"
+  },
+  {
+    "name": "乙二醇单丁醚",
+    "onyms": [
+      "Butyl cellosolve",
+      "EGBE"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "玻璃水",
+      "清洁剂",
+      "涂料"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激皮肤和呼吸道",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "阴凉密封储存",
+    "green_alternatives": [
+      "水基溶剂"
+    ],
+    "id": "msds_195"
+  },
+  {
+    "name": "六偏磷酸钠",
+    "onyms": [
+      "SHMP",
+      "磷酸钠聚合物"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "洗衣粉助洗剂",
+      "水处理"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "导致水体富营养化",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "沸石助洗剂"
+    ],
+    "id": "msds_196"
+  },
+  {
+    "name": "4A 沸石",
+    "onyms": [
+      "4A Zeolite",
+      "分子筛"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "无磷洗衣粉助洗剂",
+      "水处理"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥密封储存",
+    "green_alternatives": [
+      "本身是绿色助洗剂"
+    ],
+    "id": "msds_197"
+  },
+  {
+    "name": "蛋白酶",
+    "onyms": [
+      "Protease",
+      "生物酶"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "加酶洗衣粉",
+      "生物清洁剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，吸入致过敏",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致呼吸道过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_198"
+  },
+  {
+    "name": "淀粉酶",
+    "onyms": [
+      "Amylase",
+      "生物酶"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "加酶洗衣粉",
+      "餐具清洁剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，吸入致过敏",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致呼吸道过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_199"
+  },
+  {
+    "name": "脂肪酶",
+    "onyms": [
+      "Lipase",
+      "生物酶"
+    ],
+    "category": "清洁剂",
+    "common_products": [
+      "加酶洗衣粉",
+      "厨房清洁剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，吸入致过敏",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致呼吸道过敏",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "干燥储存",
+    "green_alternatives": [
+      "本身是绿色成分"
+    ],
+    "id": "msds_200"
+  },
+  {
+    "name": "过一硫酸氢钾",
+    "onyms": [
+      "Potassium monopersulfate",
+      "MPS"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "泳池消毒",
+      "口腔消毒剂"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，强氧化性",
+    "flammability": "不燃，但强氧化助燃",
+    "corrosivity": "中等腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗15分钟",
+    "first_aid_eye": "清水冲洗15分钟就医",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封干燥储存",
+    "green_alternatives": [
+      "紫外消毒"
+    ],
+    "id": "msds_201"
+  },
+  {
+    "name": "复合季铵盐",
+    "onyms": [
+      "Dual quaternary ammonium",
+      "复合单双链季铵盐"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "消毒喷雾",
+      "环境消毒"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "高温消毒"
+    ],
+    "id": "msds_202"
+  },
+  {
+    "name": "聚六亚甲基双胍",
+    "onyms": [
+      "PHMB",
+      "聚己缩胍",
+      "Polyhexamethylene biguanide"
+    ],
+    "category": "消毒剂",
+    "common_products": [
+      "隐形眼镜护理液",
+      "泳池消毒"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致刺激",
+    "environment": "对水生生物有一定影响",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身即低毒消毒"
+    ],
+    "id": "msds_203"
+  },
+  {
+    "name": "楝树油",
+    "onyms": [
+      "Neem oil",
+      "印楝油",
+      "苦楝油"
+    ],
+    "category": "农药",
+    "common_products": [
+      "天然驱蚊剂",
+      "植物源杀虫"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，植物源",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "本身是绿色农药"
+    ],
+    "id": "msds_204"
+  },
+  {
+    "name": "氰戊菊酯",
+    "onyms": [
+      "Fenvalerate",
+      "中西菊酯"
+    ],
+    "category": "农药",
+    "common_products": [
+      "农业杀虫剂",
+      "蚊香"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，拟除虫菊酯",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮肤刺激",
+    "environment": "对蜜蜂和水生生物剧毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离蜜蜂",
+    "green_alternatives": [
+      "Bt 制剂"
+    ],
+    "id": "msds_205"
+  },
+  {
+    "name": "炔螨特",
+    "onyms": [
+      "Propargite",
+      "克螨特"
+    ],
+    "category": "农药",
+    "common_products": [
+      "杀螨剂",
+      "果树杀螨"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "矿物油"
+    ],
+    "id": "msds_206"
+  },
+  {
+    "name": "枯草芽孢杆菌制剂",
+    "onyms": [
+      "Bacillus subtilis",
+      "生物农药"
+    ],
+    "category": "农药",
+    "common_products": [
+      "生物杀菌剂",
+      "有机农业"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光储存",
+    "green_alternatives": [
+      "本身是生物农药"
+    ],
+    "id": "msds_207"
+  },
+  {
+    "name": "阿维菌素（兽药）",
+    "onyms": [
+      "Abamectin",
+      "阿福丁",
+      "虫克星"
+    ],
+    "category": "药品",
+    "common_products": [
+      "宠物驱虫药",
+      "兽药驱虫"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，注意剂量",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物和蜜蜂高毒",
+    "first_aid_ingestion": "催吐就医",
+    "first_aid_skin": "肥皂水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存，远离鱼缸",
+    "green_alternatives": [
+      "按说明使用"
+    ],
+    "id": "msds_208"
+  },
+  {
+    "name": "甲硝唑",
+    "onyms": [
+      "Metronidazole",
+      "灭滴灵"
+    ],
+    "category": "药品",
+    "common_products": [
+      "甲硝唑片",
+      "牙科用药",
+      "妇科用药"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，孕妇禁用",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "少数人可致皮疹",
+    "environment": "诱导耐药",
+    "first_aid_ingestion": "对症处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无吸入风险",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "对症治疗"
+    ],
+    "id": "msds_209"
+  },
+  {
+    "name": "克霉唑",
+    "onyms": [
+      "Clotrimazole",
+      "抗真菌药"
+    ],
+    "category": "药品",
+    "common_products": [
+      "克霉唑乳膏",
+      "达克宁替代"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，外用安全",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致局部刺激",
+    "environment": "常规使用无显著危害",
+    "first_aid_ingestion": "就医",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "茶树精油"
+    ],
+    "id": "msds_210"
+  },
+  {
+    "name": "三氯新（TCS）",
+    "onyms": [
+      "Triclosan",
+      "三氯生",
+      "玉洁新DP300"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "抗菌皂",
+      "牙膏",
+      "洗手液"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，内分泌干扰嫌疑",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "可致接触性皮炎",
+    "environment": "持久污染，影响水生生物",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗10分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "普通肥皂"
+    ],
+    "id": "msds_211"
+  },
+  {
+    "name": "燕麦提取物",
+    "onyms": [
+      "Oat extract",
+      "胶体燕麦",
+      "Avena sativa"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "舒缓面霜",
+      "湿疹护理"
+    ],
+    "hazard_level": "低",
+    "toxicity": "极低毒",
+    "flammability": "不燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "环境友好",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "无需处理",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "无需处理",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "天然成分"
+    ],
+    "id": "msds_212"
+  },
+  {
+    "name": "聚山梨醇酯",
+    "onyms": [
+      "Polysorbate",
+      "吐温",
+      "Tween"
+    ],
+    "category": "化妆品",
+    "common_products": [
+      "乳化剂",
+      "护肤品",
+      "洗发水"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒",
+    "flammability": "可燃",
+    "corrosivity": "无腐蚀",
+    "allergy": "罕见",
+    "environment": "可生物降解",
+    "first_aid_ingestion": "无需处理",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "常温储存",
+    "green_alternatives": [
+      "天然乳化剂"
+    ],
+    "id": "msds_213"
+  },
+  {
+    "name": "茚三酮",
+    "onyms": [
+      "Ninhydrin",
+      "水合茚三酮"
+    ],
+    "category": "其他",
+    "common_products": [
+      "指纹显现",
+      "氨基酸检测"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，刺激皮肤",
+    "flammability": "可燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "可致皮炎",
+    "environment": "对水生生物有害",
+    "first_aid_ingestion": "饮牛奶就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "避光密封储存",
+    "green_alternatives": [
+      "无"
+    ],
+    "id": "msds_214"
+  },
+  {
+    "name": "氟化物",
+    "onyms": [
+      "Fluoride",
+      "氟化钠",
+      "Sodium fluoride"
+    ],
+    "category": "其他",
+    "common_products": [
+      "含氟牙膏",
+      "饮用水加氟"
+    ],
+    "hazard_level": "中",
+    "toxicity": "中等毒性，过量致氟斑牙和氟骨症",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "高浓度影响水生生物",
+    "first_aid_ingestion": "过量饮牛奶补钙，就医",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗15分钟",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "适量使用"
+    ],
+    "id": "msds_215"
+  },
+  {
+    "name": "硫酸铝",
+    "onyms": [
+      "Alum",
+      "明矾",
+      "Aluminum sulfate"
+    ],
+    "category": "其他",
+    "common_products": [
+      "净水剂",
+      "食品添加剂"
+    ],
+    "hazard_level": "低",
+    "toxicity": "低毒，铝摄入争议",
+    "flammability": "不燃",
+    "corrosivity": "低腐蚀",
+    "allergy": "罕见",
+    "environment": "铝离子污染",
+    "first_aid_ingestion": "饮清水稀释",
+    "first_aid_skin": "清水冲洗",
+    "first_aid_eye": "清水冲洗",
+    "first_aid_inhalation": "移至通风处",
+    "storage": "密封储存",
+    "green_alternatives": [
+      "无铝添加剂"
+    ],
+    "id": "msds_216"
   }
 ]

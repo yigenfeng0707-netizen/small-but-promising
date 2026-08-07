@@ -99,19 +99,26 @@ class IngredientParserAgent:
         return out.model_dump()
 
     def _ensure_retriever(self) -> Any:
-        """懒加载 MSDSRetriever：retriever 为 None 时尝试加载本地知识库。
+        """懒加载 Retriever：优先 EmbeddingRetriever，降级 MSDSRetriever。
 
         知识库加载失败时返回 None（不抛错，让流程继续，只是不匹配 MSDS）。
         """
         if self.retriever is not None:
             return self.retriever
         try:
-            # 把项目根目录加入 sys.path 以便导入 knowledge_base
             import os
             import sys
             root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
             if root not in sys.path:
                 sys.path.insert(0, root)
+            # 优先使用 Embedding 检索器
+            try:
+                from knowledge_base import EmbeddingRetriever
+                self.retriever = EmbeddingRetriever()
+                return self.retriever
+            except Exception:
+                pass
+            # 降级为精确+模糊匹配检索器
             from knowledge_base import MSDSRetriever
             self.retriever = MSDSRetriever()
             return self.retriever

@@ -5,6 +5,7 @@ import { Camera, Mic, MessageSquare, Users, Loader2, Layers } from 'lucide-react
 import { evaluate, evaluateUpload, evaluateVoice } from '../api/client'
 import { useFamilyProfile, toBackendProfile } from '../context/FamilyProfileContext'
 import VoiceInput from '../components/VoiceInput'
+import ProgressIndicator from '../components/ProgressIndicator'
 
 function HomePage() {
   const navigate = useNavigate()
@@ -83,8 +84,9 @@ function HomePage() {
           className="entry-card entry-photo"
           onClick={() => fileRef.current?.click()}
           disabled={loading}
+          aria-label="拍照评测：拍摄化学品包装进行识别"
         >
-          <Camera size={32} />
+          <Camera size={32} aria-hidden="true" />
           <h3>拍照评测</h3>
           <p>拍一下化学品包装，识别成分并评估风险</p>
         </button>
@@ -95,19 +97,20 @@ function HomePage() {
           capture="environment"
           onChange={handleFile}
           style={{ display: 'none' }}
+          aria-hidden="true"
         />
 
         {/* 语音提问 */}
-        <div className="entry-card entry-voice">
-          <Mic size={32} />
+        <div className="entry-card entry-voice" role="region" aria-label="语音提问">
+          <Mic size={32} aria-hidden="true" />
           <h3>语音提问</h3>
           <p>按住说话，问一句"84 和洁厕灵能混用吗"</p>
           <VoiceInput onResult={handleVoiceResult} />
         </div>
 
         {/* 文本提问 */}
-        <div className="entry-card entry-text">
-          <MessageSquare size={32} />
+        <div className="entry-card entry-text" role="region" aria-label="文本提问">
+          <MessageSquare size={32} aria-hidden="true" />
           <h3>文本提问</h3>
           <p>输入化学品名称或疑问，立即评测</p>
           <textarea
@@ -117,6 +120,7 @@ function HomePage() {
             onChange={(e) => setText(e.target.value)}
             rows={3}
             disabled={loading}
+            aria-label="输入化学品名称或疑问"
             onKeyDown={(e) => {
               if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) handleTextSubmit()
             }}
@@ -126,17 +130,18 @@ function HomePage() {
             className="submit-btn"
             onClick={handleTextSubmit}
             disabled={loading || !text.trim()}
+            aria-label="提交评测"
           >
-            {loading ? <Loader2 size={16} className="spin" /> : null}
+            {loading ? <Loader2 size={16} className="spin" aria-hidden="true" /> : null}
             {loading ? '评测中…' : '提交评测'}
           </button>
         </div>
       </div>
 
-      {error && <div className="home-error">❌ {error}</div>}
+      {error && <div className="home-error" role="alert">❌ {error}</div>}
       {loading && (
         <div className="home-loading">
-          <Loader2 size={20} className="spin" /> 正在调用 6 个 Agent 协同分析，请稍候…
+          <ProgressIndicator />
         </div>
       )}
 
