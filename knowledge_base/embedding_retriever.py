@@ -12,7 +12,6 @@
 """
 from __future__ import annotations
 
-import asyncio
 import json
 import logging
 import os
@@ -20,26 +19,26 @@ import pickle
 from difflib import SequenceMatcher
 from typing import Any
 
-import numpy as np
-
 from config import settings
 
 logger = logging.getLogger(__name__)
 
-# 尝试导入 FAISS
+# 尝试导入 FAISS（可选依赖，未安装时降级为精确+模糊匹配）
+FAISS_AVAILABLE = False
+DASHSCOPE_AVAILABLE = False
+np = None
+
 try:
+    import numpy as np
     import faiss
     FAISS_AVAILABLE = True
 except ImportError:
-    FAISS_AVAILABLE = False
     logger.warning("faiss-cpu 未安装，语义检索不可用，降级为精确+模糊匹配")
 
-# 尝试导入 dashscope
 try:
     import dashscope
     DASHSCOPE_AVAILABLE = True
 except ImportError:
-    DASHSCOPE_AVAILABLE = False
     logger.warning("dashscope SDK 未安装，语义检索不可用")
 
 
