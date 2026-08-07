@@ -50,6 +50,15 @@ backend/storage/
 # 知识库产物（向量索引等大文件，按需取消注释）
 # knowledge_base/index/*
 
+# Remotion 视频项目（本地渲染，不入仓库）
+dist/video/demo-video/node_modules/
+dist/video/demo-video/.cache/
+dist/video/demo-video/dist/
+
+# 生成物（保留最新版本）
+# dist/*.pptx
+# dist/*.pdf
+
 # 调试与临时文件
 _screenshots/
 _screenshots2/
